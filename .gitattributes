@@ -22,3 +22,4 @@
 *.dylib binary
 *.anim binary
 .gitignore text eol=lf
+.gitattributes text eol=lf
