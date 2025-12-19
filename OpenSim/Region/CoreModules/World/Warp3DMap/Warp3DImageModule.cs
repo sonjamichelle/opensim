@@ -79,6 +79,7 @@ namespace OpenSim.Region.CoreModules.World.Warp3DMap
         private bool m_texturePrims = true;     // true if should texture the rendered prims
         private float m_texturePrimSize = 48f;  // size of prim before we consider texturing it
         private bool m_renderMeshes = false;    // true if to render meshes rather than just bounding boxes
+        private bool m_suppressJ2kWarnings = false; // suppress CSJ2K console warnings during map rendering
 
         private const float m_cameraHeight = 4096f;
         private float m_renderMinHeight = -100f;
@@ -112,6 +113,8 @@ namespace OpenSim.Region.CoreModules.World.Warp3DMap
                 Util.GetConfigVarFromSections<float>(source, "TexturePrimSize", configSections, m_texturePrimSize);
             m_renderMeshes =
                 Util.GetConfigVarFromSections<bool>(source, "RenderMeshes", configSections, m_renderMeshes);
+            m_suppressJ2kWarnings =
+                Util.GetConfigVarFromSections<bool>(source, "SuppressJ2KWarnings", configSections, m_suppressJ2kWarnings);
 
             m_renderMaxHeight = Util.GetConfigVarFromSections<float>(source, "RenderMaxHeight", configSections, m_renderMaxHeight);
             m_renderMinHeight = Util.GetConfigVarFromSections<float>(source, "RenderMinHeight", configSections, m_renderMinHeight);
@@ -416,7 +419,7 @@ namespace OpenSim.Region.CoreModules.World.Warp3DMap
             using (Bitmap image = TerrainSplat.Splat(terrain, textureIDs, startHeights, heightRanges,
                         m_scene.RegionInfo.WorldLocX, m_scene.RegionInfo.WorldLocY,
                         m_scene.AssetService, m_imgDecoder, m_textureTerrain, m_textureAverageTerrain,
-                        twidth, twidth))
+                        m_suppressJ2kWarnings, twidth, twidth))
                     texture = new warp_Texture(image);
 
             warp_Material material = new warp_Material(texture);
@@ -520,7 +523,9 @@ namespace OpenSim.Region.CoreModules.World.Warp3DMap
                         else // It's sculptie
                         {
                             //Image sculpt = m_imgDecoder.DecodeToImage(sculptAsset.Data);
-                            Image sculpt = J2kImage.FromBytes(sculptAsset.Data, null, true, 12);
+                            Image sculpt = J2kDecoderLogSilencer.WithSuppressedConsole(
+                                m_suppressJ2kWarnings,
+                                () => J2kImage.FromBytes(sculptAsset.Data, null, true, 12));
                             if (sculpt is not null)
                             {
                                 renderMesh = m_primMesher.GenerateFacetedSculptMesh(omvPrim, (Bitmap)sculpt, lod);
@@ -763,10 +768,16 @@ namespace OpenSim.Region.CoreModules.World.Warp3DMap
                 try
                 {
                     //using (Bitmap img = (Bitmap)m_imgDecoder.DecodeToImage(asset.Data))
-                    using (Bitmap img = (Bitmap)J2kImage.FromBytes(asset.Data,null, false, 16))
+                    Bitmap img = J2kDecoderLogSilencer.WithSuppressedConsole(
+                        m_suppressJ2kWarnings,
+                        () => (Bitmap)J2kImage.FromBytes(asset.Data, null, false, 16));
+                    if (img is not null)
                     {
-                        //img.Save("lixo"+id.ToString()+".png",ImageFormat.Png);
-                        ret = new warp_Texture(img, 8); // reduce textures size to 256 * 256
+                        using (img)
+                        {
+                            //img.Save("lixo"+id.ToString()+".png",ImageFormat.Png);
+                            ret = new warp_Texture(img, 8); // reduce textures size to 256 * 256
+                        }
                     }
                 }
                 catch (Exception e)
@@ -835,7 +846,9 @@ namespace OpenSim.Region.CoreModules.World.Warp3DMap
 
             try
             {
-                using (Bitmap bitmap = (Bitmap)J2kImage.FromBytes(j2kData))
+                using (Bitmap bitmap = J2kDecoderLogSilencer.WithSuppressedConsole(
+                    m_suppressJ2kWarnings,
+                    () => (Bitmap)J2kImage.FromBytes(j2kData)))
                 {
                     width = bitmap.Width;
                     height = bitmap.Height;

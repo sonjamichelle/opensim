@@ -86,7 +86,7 @@ namespace OpenSim.Region.CoreModules.World.Warp3DMap
                 float[] startHeights, float[] heightRanges,
                 uint regionPositionX, uint regionPositionY,
                 IAssetService assetService, IJ2KDecoder decoder,
-                bool textureTerrain, bool averagetextureTerrain,
+                bool textureTerrain, bool averagetextureTerrain, bool suppressJ2kWarnings,
                 int twidth, int theight)
         {
             Bitmap[] detailTexture = new Bitmap[4];
@@ -145,7 +145,9 @@ namespace OpenSim.Region.CoreModules.World.Warp3DMap
                             {
                                 try
                                 {
-                                    detailTexture[i] = (Bitmap)J2kImage.FromBytes(asset.Data, null, false, 8);
+                                    detailTexture[i] = J2kDecoderLogSilencer.WithSuppressedConsole(
+                                        suppressJ2kWarnings,
+                                        () => (Bitmap)J2kImage.FromBytes(asset.Data, null, false, 8));
                                     //detailTexture[i] = (Bitmap)decoder.DecodeToImage(asset.Data);
                                 }
                                 catch(Exception ex)

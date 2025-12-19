@@ -435,6 +435,10 @@
     ;; Attempt to render meshes and sculpties on the map.
     ; RenderMeshes = false
 
+    ;# {SuppressJ2KWarnings} {} {Suppress CSJ2K decoder console warnings during map rendering?} {true false} false
+    ;; If true, suppresses console warnings from the JPEG2000 decoder while generating map tiles.
+    ; SuppressJ2KWarnings = false
+
     ;# {MapColorWater} {} {Water color for textured and shaded maps} {"#1D475F"}
     ; MapColorWater = "#3399FF"
 
