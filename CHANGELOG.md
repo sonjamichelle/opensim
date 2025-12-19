@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## 2025-12-19 11:40:00
+
+### Tooling
+
+- Converted `Prebuild/src/Prebuild.csproj` to SDK-style for C# Dev Kit compatibility on .NET Framework (`net48`).
+- Preserved strong-name signing (`Prebuild.snk`), `StartupObject`, `ApplicationIcon`, and existing warning settings.
+- Kept legacy `NET46` compile constant and output paths (`bin\Debug\`, `bin\Release\`) to avoid build artifact changes.
+- Carried forward embedded resources (`App.ico`, `data\prebuild-1.10.xsd`, `data\autotools.xml`) and `app.config` inclusion.
+- Disabled SDK auto-generated assembly info so `Properties/AssemblyInfo.cs` remains authoritative.
+
+**Files touched**
+
+- `Prebuild/src/Prebuild.csproj`
+
 ## 2025-12-19 10:53:54
 
 ### Map Rendering
