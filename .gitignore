@@ -54,6 +54,7 @@ bin/ScriptEngines/*/*.state
 bin/ScriptEngines/Yengine/*
 bin/*.maddin
 bin/*.exe
+bin/*.runtimeconfig.json
 bin/*.ini
 bin/j2kDecodeCache
 bin/Physics*
@@ -118,5 +119,10 @@ test-results/
 doc/html
 doc/doxygen.error.log
 bin/OpenSim.ini
+bin/Robust.ini
+bin/Robust.HG.ini
+bin/config-include/GridCommon.ini
+bin/config-include/Gloebit.ini
+bin/Gloebit.ini
 
 *.patch
