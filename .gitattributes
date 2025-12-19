@@ -21,3 +21,4 @@
 *.so  binary
 *.dylib binary
 *.anim binary
+.gitignore text eol=lf
