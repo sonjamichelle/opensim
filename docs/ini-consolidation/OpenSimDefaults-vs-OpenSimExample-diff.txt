@@ -1,0 +1,62 @@
+OpenSimDefaults.ini vs OpenSim.ini.example (diff summary)
+=======================================================
+
+Duplicated keys (present in BOTH files):
+- [BulletSim] AvatarToAvatarCollisionsByDefault
+- [ClientStack.LindenCaps] Cap_AvatarPickerSearch, Cap_GetDisplayNames, Cap_GetMesh, Cap_GetTexture
+- [Network] shard
+- [Permissions] allow_grid_gods, automatic_gods, implicit_gods
+- [Startup] CertFileName, CertHostIp, CertHostName, CertPassword, CertRenewOnStartup, EnableCertConverter, EnableSelfsignedCertSupport, PemCertPrivateKey, PemCertPublicKey, outputCertName, outputCertPassword
+
+Only in OpenSimDefaults.ini:
+- [Appearance] DelayBeforeAppearanceSave, DelayBeforeAppearanceSend, PersistBakedTextures, ResendAppearanceUpdates, ReuseTextures
+- [AssetService] AssetLoaderArgs, AssetLoaderEnabled, DefaultAssetLoader
+- [Attachments] Enabled
+- [AutoBackupModule] AutoBackupModuleEnabled
+- [BulletSim] AvatarHeightHighFudge, AvatarHeightLowFudge, AvatarHeightMidFudge, AvatarTerminalVelocity, BulletEngine, ForceSimplePrimMeshing, LinkImplementation, LinksetOffsetCenterOfMass, MaxCollisionsPerFrame, MaxUpdatesPerFrame, MeshSculptedPrim, PhysicsLoggingDir, PhysicsLoggingEnabled, ShouldRemoveZeroWidthTriangles, ShouldUseAssetHulls, TerrainImplementation, TerrainMeshMagnification, UseSeparatePhysicsThread, VehicleLoggingEnabled
+- [Chat] enabled, say_distance, shout_distance, whisper_distance
+- [ClientStack.LindenCaps] Cap_AttachmentResources, Cap_ChatSessionRequest, Cap_CopyInventoryFromNotecard, Cap_DispatchRegionInfo, Cap_EnvironmentSettings, Cap_EstateAccess, Cap_EventQueueGet, Cap_FetchInventory, Cap_FetchInventory2, Cap_FetchInventoryDescendents2, Cap_FetchLib, Cap_FetchLib2, Cap_FetchLibDescendents, Cap_FetchLibDescendents2, Cap_GetAsset, Cap_GetMesh2, Cap_GetObjectCost, Cap_GetObjectPhysicsData, Cap_GroupMemberData, Cap_GroupProposalBallot, Cap_HomeLocation, Cap_LandResources, Cap_MapLayer, Cap_MapLayerGod, Cap_NewFileAgentInventory, Cap_NewFileAgentInventoryVariablePrice, Cap_ObjectAdd, Cap_ObjectMedia, Cap_ObjectMediaNavigate, Cap_ParcelMediaURLFilterList, Cap_ParcelNavigateMedia, Cap_ParcelPropertiesUpdate, Cap_ParcelVoiceInfoRequest, Cap_ProductInfoRequest, Cap_ProvisionVoiceAccountRequest, Cap_RemoteParcelRequest, Cap_RequestTextureDownload, Cap_SearchStatRequest, Cap_SearchStatTracking, Cap_SendPostcard, Cap_SendUserReport, Cap_SendUserReportWithScreenshot, Cap_ServerReleaseNotes, Cap_SetDisplayName, Cap_SimConsole, Cap_SimulatorFeatures, Cap_StartGroupProposal, Cap_TextureStats, Cap_UntrustedSimulatorMessage, Cap_UpdateAgentInformation, Cap_UpdateAgentLanguage, Cap_UpdateGestureAgentInventory, Cap_UpdateGestureTaskInventory, Cap_UpdateNotecardAgentInventory, Cap_UpdateNotecardTaskInventory, Cap_UpdateScriptAgent, Cap_UpdateScriptTask, Cap_UploadBakedTexture, Cap_UploadObjectAsset, Cap_ViewerStartAuction, Cap_ViewerStats, Cap_WebFetchInventoryDescendents
+- [Concierge] enabled, password, regions, whoami
+- [DataSnapshot] data_exposure, default_snapshot_period, gridname, index_sims, snapshot_cache_directory
+- [Dwell] DwellModule
+- [EntityTransfer] AllowAvatarCrossing, DisableInterRegionTeleportCancellation, DisableObjectTransfer, LandingPointBehavior, LevelHGTeleport
+- [EstateManagement] AllowRegionRestartFromClient
+- [GridService] StorageProvider
+- [Groups] DebugEnabled, DebugMessagingEnabled, Enabled, GroupsCacheTimeout, MessageOnlineUsersOnly, Module
+- [Hypergrid] safemode
+- [IRC] enabled
+- [InterestManagement] ChildReprioritizationDistance, ChildTerseUpdatePeriod, ObjectsCullingByDistance, ReprioritizationEnabled, ReprioritizationInterval, RootPositionUpdateTolerance, RootReprioritizationDistance, RootRotationUpdateTolerance, RootTerseUpdatePeriod, RootVelocityUpdateTolerance, UpdatePrioritizationScheme
+- [Inventory] CoalesceMultipleObjectsToInventory
+- [JsonStore] EnableObjectStore, Enabled, MaxStringSpace
+- [LL-Functions] AddStatsInGetBoundingBox, AllowGodFunctions, AvailableTimeInMsPerAvatarInLlCastRay, AvailableTimeInMsPerRegionInLlCastRay, AvatarDetailLevelInLlCastRay, DetectExitHitsInLlCastRay, DoAttachmentsInLlCastRay, FloatTolerance2InLlCastRay, FloatToleranceInLlCastRay, LowerAvatarBoundingBoxGroundsittingXconst, LowerAvatarBoundingBoxGroundsittingYconst, LowerAvatarBoundingBoxGroundsittingZcoeff, LowerAvatarBoundingBoxGroundsittingZconst, LowerAvatarBoundingBoxSittingXconst, LowerAvatarBoundingBoxSittingYconst, LowerAvatarBoundingBoxSittingZcoeff, LowerAvatarBoundingBoxSittingZconst, LowerAvatarBoundingBoxStandingXconst, LowerAvatarBoundingBoxStandingYconst, LowerAvatarBoundingBoxStandingZcoeff, LowerAvatarBoundingBoxStandingZconst, MaxHitsInLlCastRay, MaxHitsPerObjectInLlCastRay, MaxHitsPerPrimInLlCastRay, MaximumAvailableTimeInMsInLlCastRay, MeshDetailLevelInLlCastRay, PrimBoundingBoxSafetyCoefficientX, PrimBoundingBoxSafetyCoefficientY, PrimBoundingBoxSafetyCoefficientZ, PrimDetailLevelInLlCastRay, RequiredAvailableTimeInMsInLlCastRay, RestrictEmail, SculptDetailLevelInLlCastRay, ThrottleTimeInMsInLlCastRay, UpperAvatarBoundingBoxGroundsittingXconst, UpperAvatarBoundingBoxGroundsittingYconst, UpperAvatarBoundingBoxGroundsittingZcoeff, UpperAvatarBoundingBoxGroundsittingZconst, UpperAvatarBoundingBoxSittingXconst, UpperAvatarBoundingBoxSittingYconst, UpperAvatarBoundingBoxSittingZcoeff, UpperAvatarBoundingBoxSittingZconst, UpperAvatarBoundingBoxStandingXconst, UpperAvatarBoundingBoxStandingYconst, UpperAvatarBoundingBoxStandingZcoeff, UpperAvatarBoundingBoxStandingZconst, UseLlCastRayV3, UseMeshCacheInLlCastRay, UseSimpleBoxesInGetBoundingBox, max_external_urls_per_simulator, max_listens_per_region, max_listens_per_script
+- [LandManagement] LimitParcelLayerUpdateDistance, ParcelLayerViewDistance, ShowParcelBansLines
+- [Map] DrawPrimOnMapTile, RenderMeshes, TextureOnMapTile, TexturePrimSize, TexturePrims
+- [MediaOnAPrim] Enabled
+- [Mesh] AllowMeshUpload
+- [Messaging] InstantMessageModule
+- [Modules] Include-modules
+- [Monitoring] Enabled
+- [Network] ConsolePass, ConsoleUser, OutboundDisallowForUserScripts, console_port, http_listener_cert_pass, http_listener_cert_path, http_listener_cn, http_listener_port, http_listener_ssl, http_listener_sslport
+- [ODEPhysicsSettings] av_density, av_movement_divisor_run, av_movement_divisor_walk, avatar_terminal_velocity, body_frames_auto_disable, collect_stats, filter_collisions, geom_updates_before_throttled_update, geometry_default_density, m_avatarobjectcontact_bounce, m_avatarobjectcontact_friction, m_terrainContact_erp, m_terraincontact_bounce, m_terraincontact_friction, maximum_mass_object, mesh_lod, mesh_physical_lod, mesh_sculpted_prim, nm_terraincontact_bounce, nm_terraincontact_erp, nm_terraincontact_friction, objectcontact_bounce, objectcontact_friction, world_gravityx, world_gravityy, world_gravityz, world_solver_iterations, world_stepsize
+- [PacketPool] RecycleBaseUDPPackets
+- [Permissions] serverside_object_permissions
+- [RegionReady] channel_notify, enabled, login_disable
+- [RemoteAdmin] access_password, bind_ip_address, create_region_enable_voice, create_region_public, enabled, enabled_methods, port, region_file_template
+- [SMTP] enabled
+- [ServerReleaseNotes] ServerReleaseNotesURL
+- [ServiceThrottle] Interval
+- [Sounds] MaxDistance, Module
+- [Startup] AllowScriptCrossing, ClampPrimSize, ConfigDirectory, ConsoleHistoryFile, ConsoleHistoryFileEnabled, ConsoleHistoryFileLines, ConsolePrompt, FrameTime, InworldRestartShutsDown, JobEngineEnabled, LinksetPrims, LogOverloads, MaxPoolThreads, MaxPrimUndos, MaximumTimeBeforePersistenceConsidered, MinimumTimeBeforePersistenceConsidered, NonPhysicalPrimMax, PhysicalPrimMax, RegistryLocation, Stats_URI, TrustBinaries, UpdateAgentsEveryNFrames, UpdateCoarseLocationsEveryNFrames, UpdateEntityMovementEveryNFrames, UpdateEventsEveryNFrames, UpdateObjectsEveryNFrames, UpdatePhysicsEveryNFrames, UpdateStorageEveryNFrames, UpdateTempCleaningEveryNSeconds, UpdateTerrainEveryNFrames, UseTrashOnDelete, allow_regionless, async_call_method, clientstack_plugin, collidable_prim, crash_dir, enableflyslow, meshing, physical_prim, physics, region_info_source, save_crashes, see_into_region, shutdown_console_commands_file, startup_console_commands_file
+- [Statistics] NumberOfFrames
+- [Terrain] InitialTerrain, SendTerrainUpdatesByViewDistance
+- [Textures] ReuseDynamicLowDataTextures, ReuseDynamicTextures
+- [Trees] active_trees, allowGrow, enabled, update_rate
+- [VivoxVoice] enabled, vivox_admin_password, vivox_admin_user, vivox_server, vivox_sip_uri
+- [Wind] enabled, strength, wind_plugin, wind_update_rate
+- [YEngine] Enabled, MaintenanceInterval, MinTimerInterval, UseSourceHashCode
+
+Only in OpenSim.ini.example:
+- [Architecture] Include-Architecture
+- [Const] BaseHostname, BaseURL, PrivURL, PrivatePort, PublicPort
+- [Network] ExternalHostNameForLSL
+- [OSSL] Include-osslDefaultEnable

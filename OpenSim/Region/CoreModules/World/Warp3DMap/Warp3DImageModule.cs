@@ -84,6 +84,7 @@ namespace OpenSim.Region.CoreModules.World.Warp3DMap
         private const float m_cameraHeight = 4096f;
         private float m_renderMinHeight = -100f;
         private float m_renderMaxHeight = 4096f;
+        private string m_mapTileCacheDirectory = "maptiles";
 
         private bool m_Enabled = false;
 
@@ -135,6 +136,14 @@ namespace OpenSim.Region.CoreModules.World.Warp3DMap
                 m_renderMinHeight = -100f;
             else if (m_renderMinHeight > m_renderMaxHeight - 10f)
                 m_renderMinHeight = m_renderMaxHeight - 10f;
+
+            IConfig mapImageConfig = source.Configs["MapImageService"];
+            if (mapImageConfig != null)
+            {
+                string tilesStoragePath = mapImageConfig.GetString("TilesStoragePath", string.Empty);
+                if (!string.IsNullOrWhiteSpace(tilesStoragePath))
+                    m_mapTileCacheDirectory = tilesStoragePath;
+            }
         }
 
         public void AddRegion(Scene scene)
@@ -211,7 +220,7 @@ namespace OpenSim.Region.CoreModules.World.Warp3DMap
 
             Bitmap tile = GenImage();
             // image may be reloaded elsewhere, so no compression format
-            string filename = "MAP-" + m_scene.RegionInfo.RegionID.ToString() + ".png";
+            string filename = GetLocalMapTilePath(m_scene.RegionInfo.RegionID);
             tile.Save(filename,ImageFormat.Png);
             m_primMesher = null;
             return tile;
@@ -286,6 +295,13 @@ namespace OpenSim.Region.CoreModules.World.Warp3DMap
             GC.Collect();
             GCSettings.LargeObjectHeapCompactionMode = GCLargeObjectHeapCompactionMode.Default;
             return bitmap;
+        }
+
+        private string GetLocalMapTilePath(UUID regionId)
+        {
+            string basePath = string.IsNullOrWhiteSpace(m_mapTileCacheDirectory) ? "maptiles" : m_mapTileCacheDirectory;
+            Directory.CreateDirectory(basePath);
+            return Path.Combine(basePath, $"MAP-{regionId}.png");
         }
 
         public byte[] WriteJpeg2000Image()

@@ -100,6 +100,7 @@ namespace OpenSim.Region.CoreModules.World.WorldMap
         protected bool m_exportPrintScale = false; // prints the scale of map in meters on exported map
         protected bool m_exportPrintRegionName = false; // prints the region name exported map
         protected bool m_localV1MapAssets = false; // keep V1 map assets only on  local cache
+        private string m_mapTileCacheDirectory = "maptiles";
 
         private readonly object m_sceneLock = new object();
         public WorldMapModule()
@@ -158,6 +159,14 @@ namespace OpenSim.Region.CoreModules.World.WorldMap
                 Util.GetConfigVarFromSections<bool>(config, "ExportMapAddRegionName", configSections, m_exportPrintRegionName);
             m_localV1MapAssets =
                 Util.GetConfigVarFromSections<bool>(config, "LocalV1MapAssets", configSections, m_localV1MapAssets);
+
+            IConfig mapImageConfig = config.Configs["MapImageService"];
+            if (mapImageConfig != null)
+            {
+                string tilesStoragePath = mapImageConfig.GetString("TilesStoragePath", string.Empty);
+                if (!string.IsNullOrWhiteSpace(tilesStoragePath))
+                    m_mapTileCacheDirectory = tilesStoragePath;
+            }
         }
 
         public virtual void AddRegion(Scene scene)
@@ -1338,7 +1347,7 @@ namespace OpenSim.Region.CoreModules.World.WorldMap
             startY--;
 
             bool doneLocal = false;
-            string filename = "MAP-" + m_scene.RegionInfo.RegionID.ToString() + ".png";
+            string filename = GetLocalMapTilePath(m_scene.RegionInfo.RegionID);
             try
             {
                 using(Image localMap = Bitmap.FromFile(filename))
@@ -1789,6 +1798,13 @@ namespace OpenSim.Region.CoreModules.World.WorldMap
             }
 
             return null;
+        }
+
+        private string GetLocalMapTilePath(UUID regionId)
+        {
+            string basePath = string.IsNullOrWhiteSpace(m_mapTileCacheDirectory) ? "maptiles" : m_mapTileCacheDirectory;
+            Directory.CreateDirectory(basePath);
+            return Path.Combine(basePath, $"MAP-{regionId}.png");
         }
     }
 
