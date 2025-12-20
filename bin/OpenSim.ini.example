@@ -50,7 +50,7 @@
     ; to simplify other configuration files default settings
 
     ;# {BaseHostname} {} {BaseHostname} {"example.com" "127.0.0.1"} "127.0.0.1"
-    BaseHostname = "127.0.0.1"
+    BaseHostname = "grid.dcwork.space"
 
     ;# {BaseURL} {} {BaseURL} {"http://${Const|BaseHostname"}} "http://${Const|BaseHostname}"
     BaseURL = http://${Const|BaseHostname}
@@ -61,9 +61,9 @@
     ;# {PublicPort} {} {PublicPort} {8002 9000} "9000"
     ; in case of a standalone this needs to match the parameter http_listener_port in section [Network] below
     ; in that case the default is 9000
-    PublicPort = "9000"
+    ;PublicPort = "9000"
     ; for a region on a grid, the grid services public port should be used, normal default is 8002
-    ;PublicPort = "8002"
+    PublicPort = "8002"
 
     ; you can also have them on a diferent url / IP
     ;# {PrivURL} {} {PrivURL} {"http://${Const|BaseURL}} "${Const|BaseURL}"

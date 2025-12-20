@@ -1,0 +1,230 @@
+GLOBAL SAFETY CONTRACT
+
+You are operating in READ-ONLY or ANALYSIS-ONLY mode unless explicitly instructed otherwise.
+
+ABSOLUTE RULES:
+- Do NOT delete, trim, reorder, normalize, or simplify any config files.
+- Do NOT remove comments.
+- Do NOT change default values.
+- Do NOT refactor source code.
+- Do NOT infer intent or “clean up” legacy behavior.
+- Treat commented settings as intentional and meaningful.
+
+If a task would require modifying files, STOP and ASK.
+
+Failure to follow these rules invalidates all output.
+
+
+
+
+PHASE 1A: CONFIG INVENTORY
+
+Scope:
+- OpenSimDefaults.ini
+- OpenSim.ini
+- OpenSim.ini.template
+
+Task:
+Parse all three files and extract every section/key pair.
+
+Rules:
+- Treat commented keys as present.
+- Preserve original casing, spelling, and section names.
+- Do NOT normalize, reorder, or rewrite anything.
+
+Output:
+A complete inventory of all section/key pairs per file.
+
+
+PHASE 1B: COVERAGE MATRIX
+
+Using the parsed inventory, generate a coverage matrix with the following columns:
+
+| Section | Key | Present in OpenSimDefaults.ini | Present in OpenSim.ini | Present in OpenSim.ini.template | Notes |
+
+Rules:
+- Presence includes commented keys.
+- Notes must indicate:
+  - missing from template
+  - present but commented
+  - conflicting default values
+- Do NOT make recommendations.
+
+
+
+PHASE 1C: TEMPLATE GAP REPORT
+
+Identify all settings that exist in:
+- OpenSimDefaults.ini OR OpenSim.ini
+but DO NOT exist in:
+- OpenSim.ini.template
+
+For each missing setting, output:
+- Section
+- Key
+- Source file
+- Exact original line(s)
+- Line number(s)
+
+Do NOT propose fixes.
+Do NOT add anything to the template yet.
+
+
+
+PHASE 1D: DEFAULT CONFLICT REPORT
+
+Identify all section/key pairs where the same key exists in more than one file
+but has differing default values.
+
+For each conflict, output:
+- Section
+- Key
+- Value in OpenSimDefaults.ini
+- Value in OpenSim.ini
+- Value in OpenSim.ini.template (if present)
+
+Do NOT choose a winner.
+Do NOT modify any files.
+
+
+
+PHASE 2A: TEMPLATE COMPLETENESS CHECK
+
+Assume OpenSim.ini.template is intended to become the canonical schema.
+
+Verify:
+- Every configurable setting in Defaults or OpenSim.ini is represented in the template.
+- Missing settings are identified but NOT added yet.
+
+Output:
+- Confirmation of completeness OR
+- A final list of missing settings blocking canonical status.
+
+
+
+PHASE 2B: TEMPLATE AUGMENTATION (COMMENTED ONLY)
+
+Modify OpenSim.ini.template ONLY.
+
+For each missing setting identified earlier:
+- Add it COMMENTED OUT.
+- Preserve original comments verbatim.
+- Add a source annotation comment, for example:
+  ; from OpenSimDefaults.ini (0.9.3.x)
+
+Rules:
+- Do NOT change any existing values.
+- Do NOT delete or reorder anything.
+- Do NOT uncomment new settings.
+
+
+
+PHASE 3A: CONFIG LOAD ORDER AUDIT
+
+Scour the source code to determine:
+- Where config files are loaded
+- In what order
+- Whether files are reloaded or overridden later
+
+Output for each loader:
+- File path
+- Function name
+- Files read
+- Load order
+- Notes on override behavior
+
+Do NOT modify source code.
+
+
+PHASE 3B: HARD-CODED DEFAULT AUDIT
+
+Identify all places where behavior is defined using hard-coded values instead of config.
+
+Examples:
+- Hard-coded paths
+- Hard-coded booleans
+- Hard-coded numeric limits
+
+For each occurrence, output:
+- Module
+- File
+- Line number
+- Hard-coded value
+- Expected config section/key (if known)
+
+Do NOT modify source code.
+
+
+
+PHASE 3C: UNUSED CONFIG KEYS REPORT
+
+Using OpenSim.ini.template as the canonical list:
+
+For each section/key:
+- Search source code for reads of that key.
+- Flag keys never referenced.
+
+Output:
+- Section
+- Key
+- Status: READ / NOT READ
+- Notes if partially implemented or deprecated-looking
+
+Do NOT remove or change any settings.
+
+
+PHASE 3D: INCONSISTENT CONFIG READERS
+
+Identify config keys that are:
+- Read in multiple modules
+- Read with different fallback defaults
+- Read from different section names
+
+For each, output:
+- Section/key
+- All reader locations
+- Default value used by each reader
+- Risk description (no fixes yet)
+
+Do NOT modify source code.
+
+
+PHASE 4A: FIX CANDIDATE LIST
+
+Based on prior reports, produce a prioritized list of settings that:
+- Ignore OpenSim.ini
+- Are overridden unexpectedly
+- Resolve to incorrect paths (for example maptiles)
+
+For each candidate:
+- Setting
+- Module
+- Nature of violation
+- Estimated fix complexity
+
+Do NOT implement fixes.
+
+
+PHASE 4B: SINGLE-SETTING FIX AUTHORIZATION
+
+Authorized scope:
+- ONE setting
+- ONE module
+- ONE behavior correction
+
+Rules:
+- No refactors
+- No collateral cleanup
+- No default changes
+- Preserve backward compatibility
+
+Before coding:
+- Explain exactly what will change
+- Identify file and lines affected
+- Wait for confirmation
+
+
+
+
+
+

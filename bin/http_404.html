@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>404 – OpenSim Admin Endpoint</title>
+</head>
+<body>
+  <h1>404 – Endpoint Not Available</h1>
+
+  <p>
+    You reached an OpenSim administrative or monitoring endpoint that is
+    either disabled, misconfigured, or not currently exposed.
+  </p>
+
+  <h2>This is NOT a user error</h2>
+  <p>
+    This page exists for grid operators and administrators.
+    Viewers do not use this endpoint.
+  </p>
+
+  <h2>Common reasons you are here</h2>
+  <ul>
+    <li>Monitoring or WebStats is disabled</li>
+    <li>The simulator is stalled or unhealthy</li>
+    <li>The endpoint was enabled without understanding its purpose</li>
+    <li>You followed outdated documentation or forum advice</li>
+  </ul>
+
+  <h2>What you should do next</h2>
+  <ol>
+    <li>Check simulator logs before restarting anything</li>
+    <li>Verify Monitoring and WebStats configuration</li>
+    <li>Confirm the region heartbeat is advancing</li>
+    <li>Review recent load, content, or configuration changes</li>
+  </ol>
+
+  <h2>Operator documentation</h2>
+  <p>
+    Read the observability and metrics guide before enabling endpoints:
+  </p>
+
+  <p>
+    <strong>OBSERVABILITY_AND_METRICS.md</strong><br>
+    This document explains:
+  </p>
+  <ul>
+    <li>What metrics OpenSim actually exposes</li>
+    <li>What they mean (and what they do NOT)</li>
+    <li>How to aggregate them safely</li>
+    <li>How to detect problems before users do</li>
+  </ul>
+
+  <p>
+    If you do not have monitoring, aggregation, or trend data in place,
+    this page is your warning.
+  </p>
+
+  <hr>
+
+  <p>
+    This grid values stability, transparency, and operator sanity.
+  </p>
+</body>
+</html>
