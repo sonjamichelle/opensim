@@ -1,0 +1,12 @@
+; test template for ConfigLoadHarness
+[Startup]
+; inimaster = "OpenSim.ini.template"
+; inifile = "OpenSim.ini"
+; ConfigDirectory = "."
+; RegistryLocation = "."
+; regionload_regionsdir = "Regions"
+; physics = ubODE
+; meshing = ubODEMeshmerizer
+
+[Network]
+; intentionally empty for harness defaults

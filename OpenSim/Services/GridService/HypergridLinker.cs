@@ -92,7 +92,10 @@ namespace OpenSim.Services.GridService
 
             //m_Check4096 = gridConfig.GetBoolean("Check4096", true);
 
-            m_MapTileDirectory = gridConfig.GetString("MapTileDirectory", "maptiles");
+            m_MapTileDirectory = ConfigPrompt.RequireSetting(
+                config, "MapImageService", "TilesStoragePath", "maptiles", false);
+            if (String.IsNullOrWhiteSpace(m_MapTileDirectory))
+                Environment.Exit(1);
 
             m_ThisGridInfo = new GridInfo(config);
             if(!m_ThisGridInfo.HasHGConfig)

@@ -75,11 +75,14 @@ namespace OpenSim.Services.MapImageService
                     m_log.Debug("[MAP IMAGE SERVICE]: Starting MapImage service");
 
                     IConfig serviceConfig = config.Configs["MapImageService"];
-                    if (serviceConfig is not null)
-                    {
-                        m_TilesStoragePath = serviceConfig.GetString("TilesStoragePath", m_TilesStoragePath);
-                        //memory cache JPEG tile with just water.
-                        m_WaterBitmap = new Bitmap(IMAGE_WIDTH, IMAGE_WIDTH, PixelFormat.Format24bppRgb);
+            if (serviceConfig is not null)
+            {
+                m_TilesStoragePath = ConfigPrompt.RequireSetting(
+                    config, "MapImageService", "TilesStoragePath", m_TilesStoragePath, false);
+                if (String.IsNullOrWhiteSpace(m_TilesStoragePath))
+                    Environment.Exit(1);
+                //memory cache JPEG tile with just water.
+                m_WaterBitmap = new Bitmap(IMAGE_WIDTH, IMAGE_WIDTH, PixelFormat.Format24bppRgb);
                         FillImage(m_WaterBitmap, m_Watercolor);
                         using (MemoryStream ms = new MemoryStream())
                         {

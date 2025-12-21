@@ -82,10 +82,15 @@ namespace OpenSim
 
             List<string> sources = new List<string>();
 
-            string masterFileName = startupConfig.GetString("inimaster", "OpenSimDefaults.ini");
+            string masterFileName = startupConfig.GetString("inimaster", "OpenSim.ini");
+            string masterFilePathForCopy = string.Empty;
+            string templateFilePath = ResolveTemplatePath(Util.configDir());
 
             if (masterFileName == "none")
-                masterFileName = String.Empty;
+            {
+                m_log.WarnFormat("[CONFIG]: inimaster=none is not allowed; using OpenSim.ini");
+                masterFileName = "OpenSim.ini";
+            }
 
             if (IsUri(masterFileName))
             {
@@ -99,16 +104,17 @@ namespace OpenSim
 
                 if (masterFileName != String.Empty)
                 {
-                    if (File.Exists(masterFilePath))
-                    {
-                        if (!sources.Contains(masterFilePath))
-                            sources.Add(masterFilePath);
-                    }
-                    else
-                    {
-                        m_log.ErrorFormat("Master ini file {0} not found", Path.GetFullPath(masterFilePath));
+                    if (!File.Exists(masterFilePath))
+                        masterFilePath = ResolveMissingConfigFile("master", masterFilePath, false, null, templateFilePath);
+
+                    if (String.IsNullOrEmpty(masterFilePath))
                         Environment.Exit(1);
-                    }
+
+                    if (!sources.Contains(masterFilePath))
+                        sources.Add(masterFilePath);
+                    masterFilePathForCopy = masterFilePath;
+                    if (String.Equals(masterFileName, "OpenSim.ini", StringComparison.OrdinalIgnoreCase))
+                        masterFilePathForCopy = templateFilePath;
                 }
             }
 
@@ -124,19 +130,35 @@ namespace OpenSim
             {
                 Application.iniFilePath = Path.GetFullPath(
                     Path.Combine(Util.configDir(), iniFileName));
+                templateFilePath = ResolveTemplatePath(Application.iniFilePath);
 
                 if (!File.Exists(Application.iniFilePath))
                 {
-                    iniFileName = "OpenSim.xml";
-                    Application.iniFilePath = Path.GetFullPath(Path.Combine(Util.configDir(), iniFileName));
+                    string resolved = ResolveMissingConfigFile("primary", Application.iniFilePath, true, masterFilePathForCopy, templateFilePath);
+                    if (String.IsNullOrEmpty(resolved))
+                        Environment.Exit(1);
+
+                    if (IsUri(resolved))
+                    {
+                        iniFileName = resolved;
+                        Application.iniFilePath = resolved;
+                        if (!sources.Contains(Application.iniFilePath))
+                            sources.Add(Application.iniFilePath);
+                    }
+                    else
+                    {
+                        Application.iniFilePath = resolved;
+                    }
                 }
 
-                if (File.Exists(Application.iniFilePath))
-                {
+                if (!String.IsNullOrEmpty(Application.iniFilePath) && File.Exists(Application.iniFilePath))
                     if (!sources.Contains(Application.iniFilePath))
                         sources.Add(Application.iniFilePath);
-                }
             }
+
+            if (String.Equals(masterFileName, "OpenSim.ini", StringComparison.OrdinalIgnoreCase))
+                masterFilePathForCopy = templateFilePath;
+            ConfigPrompt.SetConfigPaths(Application.iniFilePath, templateFilePath);
 
             m_config = new OpenSimConfigSource();
             m_config.Source = new IniConfigSource();
@@ -161,7 +183,8 @@ namespace OpenSim
                 m_log.InfoFormat("[CONFIG]: Searching folder {0} for config ini files", iniDirPath);
                 List<string> overrideSources = new List<string>();
 
-                string[] fileEntries = Directory.GetFiles(iniDirName);
+                string[] fileEntries = Directory.GetFiles(iniDirPath);
+                Array.Sort(fileEntries, StringComparer.Ordinal);
                 foreach (string filePath in fileEntries)
                 {
                     if (Path.GetExtension(filePath).ToLower() == ".ini")
@@ -214,6 +237,8 @@ namespace OpenSim
 
             m_config.Source.ReplaceKeyValues();
 
+            EnsureStartupValues(m_config.Source, masterFileName, iniFileName);
+
             ReadConfigSettings();
 
             return m_config;
@@ -256,6 +281,7 @@ namespace OpenSim
                             string path = Path.Combine(basepath, chunkWithoutWildcards);
                             path = Path.GetFullPath(path) + chunkWithWildcards;
                             string[] paths = Util.Glob(path);
+                            Array.Sort(paths, StringComparer.Ordinal);
 
                             // If the include path contains no wildcards, then warn the user that it wasn't found.
                             if (wildcardIndex == -1 && paths.Length == 0)
@@ -286,6 +312,78 @@ namespace OpenSim
 
             return Uri.TryCreate(file, UriKind.Absolute,
                     out configUri) && (configUri.Scheme == Uri.UriSchemeHttp || configUri.Scheme == Uri.UriSchemeHttps);
+        }
+
+        private string ResolveMissingConfigFile(string role, string path, bool allowCopy, string copySource, string templatePath)
+        {
+            string fullPath = Path.GetFullPath(path);
+            while (true)
+            {
+                Console.WriteLine($"[CONFIG]: Missing {role} config file: {fullPath}");
+                Console.WriteLine("[CONFIG]: Choose: (A)bort, (M)aster Template, (C)opy from master, (I)nteractive path, (R)etry");
+                Console.Write("[CONFIG]: Enter choice: ");
+                string choice = Console.ReadLine();
+                if (choice == null)
+                    continue;
+
+                switch (choice.Trim().ToUpperInvariant())
+                {
+                    case "A":
+                        return null;
+                    case "M":
+                        if (!String.IsNullOrEmpty(templatePath) && File.Exists(templatePath))
+                            return templatePath;
+                        Console.WriteLine("[CONFIG]: Master Template not found.");
+                        break;
+                    case "C":
+                        if (!allowCopy)
+                        {
+                            Console.WriteLine("[CONFIG]: Copy not available for this file.");
+                            break;
+                        }
+                        if (String.IsNullOrEmpty(copySource))
+                        {
+                            Console.WriteLine("[CONFIG]: No master source available to copy from.");
+                            break;
+                        }
+                        if (!File.Exists(copySource))
+                        {
+                            Console.WriteLine($"[CONFIG]: Master source not found: {copySource}");
+                            break;
+                        }
+                        try
+                        {
+                            File.Copy(copySource, fullPath);
+                            Console.WriteLine($"[CONFIG]: Copied {copySource} to {fullPath}");
+                            return fullPath;
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine($"[CONFIG]: Copy failed: {e.Message}");
+                            break;
+                        }
+                    case "I":
+                        Console.Write("[CONFIG]: Enter path or URI: ");
+                        string input = Console.ReadLine();
+                        if (String.IsNullOrWhiteSpace(input))
+                            break;
+                        if (IsUri(input))
+                            return input;
+                        string candidate = Path.GetFullPath(input);
+                        if (File.Exists(candidate))
+                            return candidate;
+                        Console.WriteLine($"[CONFIG]: File not found: {candidate}");
+                        break;
+                    case "R":
+                        if (File.Exists(fullPath))
+                            return fullPath;
+                        Console.WriteLine($"[CONFIG]: Still missing: {fullPath}");
+                        break;
+                    default:
+                        Console.WriteLine("[CONFIG]: Invalid choice.");
+                        break;
+                }
+            }
         }
 
         /// <summary>
@@ -325,6 +423,66 @@ namespace OpenSim
                 }
             }
             return success;
+        }
+
+        private void EnsureStartupValues(IConfigSource configSource, string masterFileName, string iniFileName)
+        {
+            if (configSource == null)
+                return;
+
+            string resolved;
+
+            resolved = ConfigPrompt.RequireSetting(configSource, "Startup", "inimaster", masterFileName, true);
+            if (String.IsNullOrWhiteSpace(resolved))
+                Environment.Exit(1);
+
+            resolved = ConfigPrompt.RequireSetting(configSource, "Startup", "inifile", iniFileName, false);
+            if (String.IsNullOrWhiteSpace(resolved))
+                Environment.Exit(1);
+
+            resolved = ConfigPrompt.RequireSetting(configSource, "Startup", "ConfigDirectory", null, false);
+            if (String.IsNullOrWhiteSpace(resolved))
+                Environment.Exit(1);
+
+            resolved = ConfigPrompt.RequireSetting(configSource, "Startup", "RegistryLocation", null, false);
+            if (String.IsNullOrWhiteSpace(resolved))
+                Environment.Exit(1);
+
+            resolved = ConfigPrompt.RequireSetting(configSource, "Startup", "regionload_regionsdir", null, false);
+            if (String.IsNullOrWhiteSpace(resolved))
+                Environment.Exit(1);
+
+            resolved = ConfigPrompt.RequireSetting(configSource, "Startup", "physics", null, false);
+            if (String.IsNullOrWhiteSpace(resolved))
+                Environment.Exit(1);
+
+            resolved = ConfigPrompt.RequireSetting(configSource, "Startup", "meshing", null, false);
+            if (String.IsNullOrWhiteSpace(resolved))
+                Environment.Exit(1);
+        }
+
+        private string ResolveTemplatePath(string iniPathOrDir)
+        {
+            string baseDir = iniPathOrDir;
+            if (!String.IsNullOrWhiteSpace(iniPathOrDir))
+            {
+                if (IsUri(iniPathOrDir))
+                {
+                    baseDir = Util.configDir();
+                }
+                else if (File.Exists(iniPathOrDir))
+                {
+                    baseDir = Path.GetDirectoryName(iniPathOrDir);
+                }
+                else if (!Directory.Exists(iniPathOrDir))
+                {
+                    baseDir = Util.configDir();
+                }
+            }
+            if (String.IsNullOrWhiteSpace(baseDir))
+                baseDir = Util.configDir();
+
+            return Path.GetFullPath(Path.Combine(baseDir, "OpenSim.ini.template"));
         }
 
         /// <summary>

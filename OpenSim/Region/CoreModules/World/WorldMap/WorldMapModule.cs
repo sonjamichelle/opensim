@@ -163,9 +163,11 @@ namespace OpenSim.Region.CoreModules.World.WorldMap
             IConfig mapImageConfig = config.Configs["MapImageService"];
             if (mapImageConfig != null)
             {
-                string tilesStoragePath = mapImageConfig.GetString("TilesStoragePath", string.Empty);
-                if (!string.IsNullOrWhiteSpace(tilesStoragePath))
-                    m_mapTileCacheDirectory = tilesStoragePath;
+                string tilesStoragePath = ConfigPrompt.RequireSetting(
+                    config, "MapImageService", "TilesStoragePath", m_mapTileCacheDirectory, false);
+                if (String.IsNullOrWhiteSpace(tilesStoragePath))
+                    Environment.Exit(1);
+                m_mapTileCacheDirectory = tilesStoragePath;
             }
         }
 

@@ -140,9 +140,11 @@ namespace OpenSim.Region.CoreModules.World.Warp3DMap
             IConfig mapImageConfig = source.Configs["MapImageService"];
             if (mapImageConfig != null)
             {
-                string tilesStoragePath = mapImageConfig.GetString("TilesStoragePath", string.Empty);
-                if (!string.IsNullOrWhiteSpace(tilesStoragePath))
-                    m_mapTileCacheDirectory = tilesStoragePath;
+                string tilesStoragePath = ConfigPrompt.RequireSetting(
+                    source, "MapImageService", "TilesStoragePath", m_mapTileCacheDirectory, false);
+                if (String.IsNullOrWhiteSpace(tilesStoragePath))
+                    Environment.Exit(1);
+                m_mapTileCacheDirectory = tilesStoragePath;
             }
         }
 
@@ -301,7 +303,7 @@ namespace OpenSim.Region.CoreModules.World.Warp3DMap
         {
             string basePath = string.IsNullOrWhiteSpace(m_mapTileCacheDirectory) ? "maptiles" : m_mapTileCacheDirectory;
             Directory.CreateDirectory(basePath);
-            return Path.Combine(basePath, $"MAP-{regionId}.png");
+            return System.IO.Path.Combine(basePath, $"MAP-{regionId}.png");
         }
 
         public byte[] WriteJpeg2000Image()

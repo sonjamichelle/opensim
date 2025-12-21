@@ -816,6 +816,7 @@
 	;; RECOMMENDATION:
 	;;   Leave as "." unless you KNOW you need to relocate it.
 	;;
+	;; UNIFICATION BLOCKER: readers -> OpenSim/Server/ServerMain.cs:126 (section=Startup, default="."); OpenSim/Region/Application/OpenSimBase.cs:180 (section=Startup, default=String.Empty)
 	RegistryLocation = "."
 
 	;; ------------------------------------------------------------------
@@ -848,6 +849,7 @@
 	;; RECOMMENDATION:
 	;;   Leave default unless you are deliberately separating config from binaries.
 	;;
+	;; UNIFICATION BLOCKER: readers -> OpenSim/Framework/Util.cs:2321 (section=Startup, default="."); OpenSim/Server/Base/ServicesServerBase.cs:133 (section=Startup, default=m_configDirectory)
 	ConfigDirectory = "."
 
 ;; ##
@@ -1076,6 +1078,7 @@
 	;;   - Wrong path = no regions loaded
 	;;   - Typos here cause silent region loss
 	;;
+	;; UNIFICATION BLOCKER: readers -> OpenSim/Region/Application/OpenSim.cs:752 (section=Startup, default="Regions"); OpenSim/ApplicationPlugins/LoadRegions/RegionLoaderFileSystem.cs:57 (section=Startup, default=regionConfigPath); OpenSim/ApplicationPlugins/RemoteController/RemoteAdminPlugin.cs:815 (section=Startup, default=regionConfigPath)
 	regionload_regionsdir = "Regions"
 
 	;; ------------------------------------------------------------------
@@ -3052,6 +3055,7 @@
 	;;   - Not per-frame
 	;;   - Accuracy usually outweighs cost
 	;;
+	;; UNIFICATION BLOCKER: readers -> OpenSim/Region/Application/ConfigurationLoader.cs:422 (section=Startup, default=none); OpenSim/Region/PhysicsModules/BulletS/BSScene.cs:228 (section=Startup, default=string.Empty); OpenSim/Region/PhysicsModules/Meshing/ZeroMesher.cs:77 (section=Startup, default=Name); OpenSim/Region/PhysicsModules/ubOde/ODEModule.cs:51 (section=Startup, default=string.Empty); OpenSim/Region/PhysicsModules/ubOdeMeshing/Meshmerizer.cs:96 (section=Startup, default=string.Empty); OpenSim/Region/PhysicsModules/Meshing/Meshmerizer/Meshmerizer.cs:95 (section=Startup, default=string.Empty)
 	meshing = ubODEMeshmerizer
 
 	;; ---------------------------------------------------------------------
@@ -3397,6 +3401,7 @@
     ;;    Predictability
     ;;    Long-term maintainability
     ;;
+    ;; UNIFICATION BLOCKER: readers -> OpenSim/Region/Application/ConfigurationLoader.cs:421 (section=Startup, default=none); OpenSim/Region/PhysicsModules/BasicPhysics/BasicPhysicsScene.cs:80 (section=Startup, default=string.Empty); OpenSim/Region/PhysicsModules/BulletS/BSScene.cs:225 (section=Startup, default=string.Empty); OpenSim/Region/PhysicsModules/BulletS/ExtendedPhysics.cs:95 (section=Startup, default=string.Empty); OpenSim/Region/PhysicsModules/POS/POSScene.cs:73 (section=Startup, default=string.Empty); OpenSim/Region/PhysicsModules/ubOde/ODEModule.cs:47 (section=Startup, default=string.Empty)
     physics = ubODE
 
     ;; ------------------------------------------------------------------
@@ -3552,6 +3557,11 @@
 	;;    llEmail() will NOT function
 	;;    No fallback mail transport exists
 	;;
+
+    ; from OpenSimDefaults.ini (0.9.3.x)
+    ;DecodedSculptMapPath = "j2kDecodeCache"
+    ; from OpenSimDefaults.ini (0.9.3.x)
+    ;CacheSculptMaps = true
 
 [YEngine]
 	;; ==================================================================
@@ -4733,6 +4743,7 @@
 
 	;; Renew self-signed certificate on every startup.
 	;; Useful for ephemeral test systems only.
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/Application/OpenSimBase.cs:360
 	CertRenewOnStartup = false
 
 	;; --------------------------------------------------
@@ -4790,6 +4801,7 @@
 	;; provides encryption with LOW SECURITY.
 	;; This is equivalent to "encrypted but not trusted".
 
+
 [Map]
 	;; ------------------------------------------------------------------
 	;; MAP TILE GENERATION  (WORLD MAP PIPELINE)
@@ -4826,6 +4838,7 @@
 	;;    true  -> Active worlds, normal operation
 	;;    false -> Static showcase regions, custom map pipelines
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/Framework/Scenes/Scene.cs:1010; OpenSim/Region/CoreModules/World/LegacyMap/MapImageModule.cs:90
 	GenerateMaptiles = true
 
 	;; --------------------------------------------------
@@ -4838,6 +4851,7 @@
 	;;    "WorldMap" is effectively fixed
 	;;    No alternate implementations are actively maintained
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/CoreModules/World/WorldMap/HGWorldMapModule.cs:62; OpenSim/Region/CoreModules/World/WorldMap/WorldMapModule.cs:60; OpenSim/Region/CoreModules/World/WorldMap/WorldMapModule.cs:151; OpenSim/Region/CoreModules/World/WorldMap/WorldMapModule.cs:237
 	WorldMapModule = "WorldMap"
 
 	;; --------------------------------------------------
@@ -4863,6 +4877,7 @@
 	;;    Neither module produces modern-quality map imagery
 	;;    Both are constrained by legacy architecture
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/CoreModules/World/LegacyMap/MapImageModule.cs:63; OpenSim/Region/CoreModules/World/LegacyMap/MapImageModule.cs:176; OpenSim/Region/CoreModules/World/LegacyMap/MapImageModule.cs:176; OpenSim/Region/CoreModules/World/LegacyMap/MapImageModule.cs:176; OpenSim/Region/CoreModules/World/LegacyMap/MapImageModule.cs:206; OpenSim/Region/CoreModules/World/Warp3DMap/Warp3DImageModule.cs:98; OpenSim/Region/CoreModules/World/Warp3DMap/Warp3DImageModule.cs:98
 	MapImageModule = "Warp3DImageModule"
 
 	;; --------------------------------------------------
@@ -4878,6 +4893,7 @@
 	;; FAILURE SYMPTOM:
 	;;    Region stays blank on the map for long periods
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/CoreModules/World/WorldMap/HGWorldMapModule.cs:75; OpenSim/Region/CoreModules/World/WorldMap/WorldMapModule.cs:154
 	BlacklistTimeout = 600
 
 	;; --------------------------------------------------
@@ -4892,6 +4908,7 @@
 	;;    Frequent refresh is CPU expensive
 	;;    Large grids should use conservative values
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/Framework/Scenes/Scene.cs:1014
 	MaptileRefresh = 3600
 
 	;; --------------------------------------------------
@@ -4921,6 +4938,7 @@
 	;;    High object counts dramatically increase render time
 	;;    Large regions amplify cost
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/CoreModules/World/LegacyMap/MapImageModule.cs:86; OpenSim/Region/CoreModules/World/Warp3DMap/Warp3DImageModule.cs:104
 	DrawPrimOnMapTile = true
 
 	;; --------------------------------------------------
@@ -4932,6 +4950,7 @@
 	;; true  = Use terrain textures
 	;; false = Use shaded green height map
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/CoreModules/World/LegacyMap/MapImageModule.cs:88; OpenSim/Region/CoreModules/World/Warp3DMap/Warp3DImageModule.cs:106
 	TextureOnMapTile = true
 
 	;; --------------------------------------------------
@@ -4943,6 +4962,7 @@
 	;; true  = Apply textures (slower, more detailed)
 	;; false = Flat shading
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/CoreModules/World/Warp3DMap/Warp3DImageModule.cs:112
 	TexturePrims = true
 
 	;; --------------------------------------------------
@@ -4955,6 +4975,7 @@
 	;;
 	;; This is a PERFORMANCE FILTER.
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/CoreModules/World/Warp3DMap/Warp3DImageModule.cs:114
 	TexturePrimSize = 48
 
 	;; --------------------------------------------------
@@ -4971,6 +4992,7 @@
 	;;    Many meshes do not render correctly
 	;;    High cost for poor results
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/CoreModules/World/Warp3DMap/Warp3DImageModule.cs:116
 	RenderMeshes = false
 
 	;; --------------------------------------------------
@@ -4983,7 +5005,9 @@
 	;; These exist to exclude skyboxes, overhead builds,
 	;; and high-altitude clutter from maps.
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/CoreModules/World/Warp3DMap/Warp3DImageModule.cs:120
 	RenderMaxHeight = 200
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/CoreModules/World/Warp3DMap/Warp3DImageModule.cs:121
 	RenderMinHeight = 1
 
 	;; --------------------------------------------------
@@ -5087,6 +5111,26 @@
 	;; this is expected behavior under current code,
 	;; NOT a misconfiguration.
 
+	;; CANONICAL CONFIG:
+	;; Map tile storage is defined in [MapImageService] TilesStoragePath.
+	;; That is the ONLY supported location.
+
+
+[MapImageService]
+	;; --------------------------------------------------
+	;; TilesStoragePath
+	;; --------------------------------------------------
+	;;
+	;; Canonical root directory for all generated map tiles.
+	;;
+	;; This MUST be set to keep generated tiles out of bin/.
+	;; All map-related modules read this setting.
+	;;
+	;; Example:
+	;; TilesStoragePath = "maptiles"
+	TilesStoragePath = "maptiles"
+
+
 [Permissions]
 	;; ------------------------------------------------------------------
 	;; PERMISSIONS  (SECURITY, TRUST, AND ABUSE CONTROL)
@@ -5126,6 +5170,7 @@
 	;; is typically assumed, but explicit configuration
 	;; is STRONGLY recommended.
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/Application/OpenSimBase.cs:237; OpenSim/Region/ScriptEngine/Shared/Tests/LSL_ApiInventoryTests.cs:70; OpenSim/Region/OptionalModules/PrimLimitsModule/PrimLimitsModule.cs:62; OpenSim/Region/Framework/Scenes/Tests/SceneObjectCrossingTests.cs:249; OpenSim/Region/Framework/Scenes/Tests/UserInventoryTests.cs:191; OpenSim/Region/CoreModules/World/Permissions/PermissionsModule.cs:151
 	permissionmodules = "DefaultPermissionsModule"
 
 	;; --------------------------------------------------
@@ -5148,6 +5193,7 @@
 	;; making this EXTREMELY dangerous to disable.
 	;;
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/ScriptEngine/Shared/Tests/LSL_ApiInventoryTests.cs:68; OpenSim/Region/ScriptEngine/Shared/Tests/LSL_ApiInventoryTests.cs:71; OpenSim/Region/Framework/Scenes/Tests/SceneObjectDeRezTests.cs:86; OpenSim/Region/Framework/Scenes/Tests/SceneObjectDeRezTests.cs:176; OpenSim/Region/Framework/Scenes/Tests/SceneObjectUserGroupTests.cs:63; OpenSim/Region/Framework/Scenes/Tests/ScenePresenceAgentTests.cs:273; OpenSim/Region/Framework/Scenes/Tests/ScenePresenceTeleportTests.cs:280; OpenSim/Region/Framework/Scenes/Tests/ScenePresenceTeleportTests.cs:453; OpenSim/Region/Framework/Scenes/Tests/UserInventoryTests.cs:192; OpenSim/Region/CoreModules/World/Permissions/PermissionsModule.cs:164; OpenSim/Region/CoreModules/Framework/InventoryAccess/HGInventoryAccessModule.cs:104
 	serverside_object_permissions = true
 
 	;; --------------------------------------------------
@@ -5168,6 +5214,7 @@
 	;; If you do not trust your grid admins with god powers,
 	;; you already have a larger problem.
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/Framework/Scenes/GodController.cs:79; OpenSim/Region/CoreModules/World/Permissions/PermissionsModule.cs:163
 	allow_grid_gods = true
 
 	;; --------------------------------------------------
@@ -5188,6 +5235,7 @@
 	;;    false on shared grids
 	;;    true only on private or single-owner grids
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/Framework/Scenes/GodController.cs:91; OpenSim/Region/CoreModules/World/Permissions/PermissionsModule.cs:170
 	region_owner_is_god = false
 
 	;; --------------------------------------------------
@@ -5204,6 +5252,7 @@
 	;; RECOMMENDED:
 	;;    Leave disabled unless explicitly required
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/Framework/Scenes/GodController.cs:96; OpenSim/Region/CoreModules/World/Permissions/PermissionsModule.cs:171
 	region_manager_is_god = false
 
 	;; --------------------------------------------------
@@ -5220,6 +5269,7 @@
 	;;    true  -> Convenience
 	;;    false -> Reduced accidental misuse
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/Framework/Scenes/GodController.cs:107; OpenSim/Region/CoreModules/World/Permissions/PermissionsModule.cs:176
 	automatic_gods = false
 
 	;; --------------------------------------------------
@@ -5239,6 +5289,7 @@
 	;; RECOMMENDED:
 	;;    false
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/Framework/Scenes/GodController.cs:114; OpenSim/Region/CoreModules/World/Permissions/PermissionsModule.cs:177
 	implicit_gods = false
 
 	;; --------------------------------------------------
@@ -5258,6 +5309,7 @@
 	;;    all  -> Open creative grids
 	;;    gods -> Locked-down or high-security environments
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/CoreModules/World/Permissions/PermissionsModule.cs:182
 	allowed_script_creators = all
 
 	;; --------------------------------------------------
@@ -5277,6 +5329,7 @@
 	;;    Restricting this can prevent script-based griefing
 	;;    But also breaks normal creator workflows
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/CoreModules/World/Permissions/PermissionsModule.cs:184
 	allowed_script_editors = all
 
 	;; --------------------------------------------------
@@ -5573,6 +5626,7 @@
 	;;    Confusion over who is actually in control
 	;;
 
+
 [EstateManagement]
 	;; WARNING: Client-initiated restarts can fully shut down regions
 	;; depending on InworldRestartShutsDown.
@@ -5749,6 +5803,7 @@
 	;;  Provide profile audit and moderation tools
 	;;
 	;; User profiles are an identity integration point, not just viewer fluff.
+
 
 [Network]
 	;; ------------------------------------------------------------------
@@ -6050,6 +6105,9 @@
 	;; These limits are PER SIMULATOR INSTANCE unless noted otherwise.
 	;;
 
+    ; from OpenSimDefaults.ini (0.9.3.x)
+    ; HttpBodyMaxLenMAX=16384
+
 [ScriptsHttpRequestModule]
 	;; --------------------------------------------------
 	;; MaxPoolThreads
@@ -6184,6 +6242,7 @@
 	;;    30000 ms only when unavoidable
 	;;
 	;; RequestsTimeOut = 30000
+
 
 [AccessControl]	
 	;; ------------------------------------------------------------------
@@ -6344,6 +6403,7 @@
 	;;
 	;; Silent failure is indistinguishable from system failure.
 	;; Explicit denial reasons are REQUIRED for safe operation.
+
 
 [ClientStack.LindenUDP]
 	;; ------------------------------------------------------------------
@@ -6588,6 +6648,7 @@
 	;;     to reduce viewer bandwidth settings
 	;;
 	;; SupportViewerObjectsCache = true
+
 
 [ClientStack.LindenCaps]
 	;; ------------------------------------------------------------------
@@ -6932,6 +6993,9 @@
 	;; Risk if disabled: None for normal operation.
 	Cap_ViewerStats = ""
 
+    ; from OpenSimDefaults.ini (0.9.3.x)
+    ;Cap_RequestTextureDownload = ""
+
 [Chat]
 	;; ------------------------------------------------------------------
 	;; CHAT RANGE CONTROL  (PROXIMITY COMMUNICATION)
@@ -7269,6 +7333,7 @@
 	;; This module is REQUIRED for basic IM functionality.
 	;; Disabling or misnaming it breaks all instant messaging.
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/CoreModules/Avatar/InstantMessage/InstantMessageModule.cs:41; OpenSim/Region/CoreModules/Avatar/InstantMessage/InstantMessageModule.cs:63; OpenSim/Region/CoreModules/Avatar/InstantMessage/InstantMessageModule.cs:63; OpenSim/Region/CoreModules/Avatar/InstantMessage/InstantMessageModule.cs:64; OpenSim/Region/CoreModules/Avatar/InstantMessage/InstantMessageModule.cs:129
 	InstantMessageModule = InstantMessageModule
 
 	;; --------------------------------------------------
@@ -8450,6 +8515,9 @@
 	;;
 	; MinSizeToMeshmerize = 0.1
 
+    ; from OpenSimDefaults.ini (0.9.3.x)
+    ; av_height_fudge_factor = 0.52
+
 [BulletSim]
 	;; ------------------------------------------------------------------
 	;; BULLETSIM PHYSICS ENGINE  (ALTERNATE PHYSICS BACKEND)
@@ -8518,6 +8586,7 @@
 	;; RECOMMENDED:
 	;;    false unless you have measured benefit
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/PhysicsModules/BulletS/BSParam.cs:431
 	UseSeparatePhysicsThread = false
 
 	;; ==================================================================
@@ -8542,6 +8611,7 @@
 	;;    More detailed
 	;;    MUCH higher memory and CPU cost
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/PhysicsModules/BulletS/BSParam.cs:602
 	TerrainImplementation = 0
 
 	;; --------------------------------------------------
@@ -8559,6 +8629,7 @@
 	;;    Memory usage grows exponentially
 	;;    Rarely justified
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/PhysicsModules/BulletS/BSParam.cs:604
 	TerrainMeshMagnification = 2
 
 	;; ==================================================================
@@ -8578,6 +8649,7 @@
 	;;    true for realism and RP
 	;;    false for crowded events
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/PhysicsModules/BulletS/BSParam.cs:619
 	AvatarToAvatarCollisionsByDefault = true
 
 	;; --------------------------------------------------
@@ -8587,8 +8659,11 @@
 	;; Adjusts avatar collision capsule height at different sizes.
 	;; Used to correct mismatches between visual and physical height.
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/PhysicsModules/BulletS/BSParam.cs:644
 	AvatarHeightLowFudge  = 0
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/PhysicsModules/BulletS/BSParam.cs:646
 	AvatarHeightMidFudge  = 0
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/PhysicsModules/BulletS/BSParam.cs:648
 	AvatarHeightHighFudge = 0
 
 	;; --------------------------------------------------
@@ -8605,12 +8680,19 @@
 	;;    “Invisible walls”
 	;;    Getting stuck on steps
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/PhysicsModules/BulletS/BSParam.cs:670
 	; AvatarStepHeight = 0.6
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/PhysicsModules/BulletS/BSParam.cs:672
 	; AvatarStepAngle = 0.3
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/PhysicsModules/BulletS/BSParam.cs:676
 	; AvatarStepApproachFactor = 2
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/PhysicsModules/BulletS/BSParam.cs:674
 	; AvatarStepGroundFudge = 0.1
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/PhysicsModules/BulletS/BSParam.cs:678
 	; AvatarStepForceFactor = 0
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/PhysicsModules/BulletS/BSParam.cs:680
 	; AvatarStepUpCorrectionFactor = 0.8
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/PhysicsModules/BulletS/BSParam.cs:682
 	; AvatarStepSmoothingSteps = 1
 
 	;; --------------------------------------------------
@@ -8622,6 +8704,7 @@
 	;; Negative = downward
 	;; ~54 m/s approximates real-world terminal velocity
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/PhysicsModules/BulletS/BSParam.cs:656
 	AvatarTerminalVelocity = -54
 
 	;; ==================================================================
@@ -8657,6 +8740,7 @@
 	;;
 	;; Can cause unexpected rotations if enabled.
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/PhysicsModules/BulletS/BSParam.cs:833
 	LinksetOffsetCenterOfMass = false
 
 	;; ==================================================================
@@ -8676,6 +8760,7 @@
 	;;    Sculpties are legacy
 	;;    High CPU cost
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/PhysicsModules/BulletS/BSParam.cs:436; OpenSim/Region/PhysicsModules/BulletS/Tests/BulletSimTestsUtil.cs:62; OpenSim/Region/PhysicsModules/BulletS/Tests/HullCreation.cs:81
 	MeshSculptedPrim = true
 
 	;; --------------------------------------------------
@@ -8689,6 +8774,7 @@
 	;;    Almost never beneficial
 	;;    Increases CPU cost
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/PhysicsModules/BulletS/BSParam.cs:440; OpenSim/Region/PhysicsModules/BulletS/Tests/BulletSimTestsUtil.cs:63; OpenSim/Region/PhysicsModules/BulletS/Tests/HullCreation.cs:82
 	ForceSimplePrimMeshing = false
 
 	;; --------------------------------------------------
@@ -8703,6 +8789,7 @@
 	;; If false:
 	;;    Doorways may become impassable
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/PhysicsModules/BulletS/BSParam.cs:448; OpenSim/Region/PhysicsModules/BulletS/Tests/HullCreation.cs:84
 	ShouldRemoveZeroWidthTriangles = true
 
 	;; --------------------------------------------------
@@ -8718,6 +8805,7 @@
 	;; CONS:
 	;;    Requires properly authored assets
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/PhysicsModules/BulletS/BSParam.cs:456; OpenSim/Region/PhysicsModules/BulletS/Tests/HullCreation.cs:88
 	ShouldUseAssetHulls = true
 
 	;; ==================================================================
@@ -8785,6 +8873,7 @@
 	;;   Raising this does NOT improve accuracy unless
 	;;   the limit is actively being hit.
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/PhysicsModules/BulletS/BSParam.cs:497
 	MaxCollisionsPerFrame = 2048
 
 	;; --------------------------------------------------
@@ -8835,6 +8924,7 @@
 	;;      Excessive mesh collisions
 	;;      Poorly authored content
 	;;
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/PhysicsModules/BulletS/BSParam.cs:501
 	MaxUpdatesPerFrame = 8192
 
 	;; ==================================================================
@@ -9170,6 +9260,19 @@
 	;; KEEP DISABLED.
 	;;
 
+; from OpenSimDefaults.ini (0.9.3.x)
+;    extended-escape = true
+; from OpenSimDefaults.ini (0.9.3.x)
+;    realm = OpenSim REST
+; from OpenSimDefaults.ini (0.9.3.x)
+;    dump-asset = false
+; from OpenSimDefaults.ini (0.9.3.x)
+;    path-fill = true
+; from OpenSimDefaults.ini (0.9.3.x)
+;    dump-line-size = 32
+; from OpenSimDefaults.ini (0.9.3.x)
+;    flush-on-error = true
+
 [RestPlugins]
 	;; WARNING: These REST plugins are incomplete and unsafe. Do not use.
 	;; ------------------------------------------------------------------
@@ -9228,12 +9331,15 @@
 	; RestPlugins are not currently operational.
 	;    enabled = false
 	;    god_key = UNUSED
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Framework/Servers/HttpServer/OSHttpServer/HttpInputItem.cs:160; OpenSim/Framework/Servers/HttpServer/OSHttpServer/HttpInputItem.cs:307
 	;    prefix = /admin
 	;[RestRegionPlugin]
 	;    enabled = false
 	;[RestHandler]
 	;    enabled = false
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Services/Connectors/Authentication/AuthenticationServicesConnector.cs:101; OpenSim/Server/Handlers/Authentication/AuthenticationServerPostHandler.cs:132
 	;    authenticate = false
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Framework/Servers/HttpServer/OSHttpServer/HttpClientContext.cs:100
 	;    secured = false
 
 [IRC]
@@ -9277,6 +9383,39 @@
 	;;    Or replace with webhook-based event emitters
 	;;
 	enabled = false
+
+    ; from OpenSimDefaults.ini (0.9.3.x)
+    ;server  = name.of.irc.server.on.the.net
+    ; from OpenSimDefaults.ini (0.9.3.x)
+    ;nick    = OpenSimBotNameProbablyMakeThisShorter
+    ; from OpenSimDefaults.ini (0.9.3.x)
+    ;user    = "USER OpenSimBot 8 * :I'm an OpenSim to IRC bot"
+    ; from OpenSimDefaults.ini (0.9.3.x)
+    ;commands_enabled = false
+    ; from OpenSimDefaults.ini (0.9.3.x)
+    ;command_channel = 2777
+    ; from OpenSimDefaults.ini (0.9.3.x)
+    ;report_clients = true
+    ; from OpenSimDefaults.ini (0.9.3.x)
+    ;relay_private_channels = false
+    ; from OpenSimDefaults.ini (0.9.3.x)
+    ;relay_private_channel_in = 2226
+    ; from OpenSimDefaults.ini (0.9.3.x)
+    ;relay_private_channel_out = 2225
+    ; from OpenSimDefaults.ini (0.9.3.x)
+    ;relay_chat = true
+    ; from OpenSimDefaults.ini (0.9.3.x)
+    ;msgformat = "PRIVMSG {0} : {3} - {1} of {2}"
+    ; from OpenSimDefaults.ini (0.9.3.x)
+    ;exclude_list=User 1,User 2,User 3
+    ; from OpenSimDefaults.ini (0.9.3.x)
+    ;alert_show = false
+    ; from OpenSimDefaults.ini (0.9.3.x)
+    ;alert_show_serverinfo = true
+    ; from OpenSimDefaults.ini (0.9.3.x)
+    ;alert_msg_pre = "This region is linked to Irc."
+    ; from OpenSimDefaults.ini (0.9.3.x)
+    ;alert_msg_post = "Everything you say in public chat can be listened."
 
 [Wind]
 	;; ------------------------------------------------------------------
@@ -10243,6 +10382,9 @@
 	;;
 	;; DataSnapshot should NOT be expanded or modernized further.
 	;; It should eventually be retired once a proper replacement exists.
+
+    ; from OpenSimDefaults.ini (0.9.3.x)
+    ;DATA_SRV_MISearch = "http://metaverseink.com/cgi-bin/register.py"
 
 [Economy]
 	;; ==================================================================
@@ -14151,6 +14293,7 @@
 	;; ==================================================================
 
 	;; Default time interval (in ms) for the throttle service thread to wake up
+	;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/Framework/Scenes/EventManager.cs:2614
 	Interval = 5000
 
 [Dwell]
@@ -14299,6 +14442,7 @@
     ;;
     ;; Default behavior. Safe to leave enabled or disabled.
     ;;
+    ;; UNUSED CONFIG KEY: mentioned in code but not read via config getter; refs: OpenSim/Region/CoreModules/World/Land/DwellModule.cs:82
     DwellModule = DefaultDwellModule
 
 [ServerReleaseNotes]

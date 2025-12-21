@@ -28,6 +28,7 @@ Task:
 Parse all three files and extract every section/key pair.
 
 Rules:
+-- - OpenSim.ini.template is the canonical authority used as the master file. 
 - Treat commented keys as present.
 - Preserve original casing, spelling, and section names.
 - Do NOT normalize, reorder, or rewrite anything.
@@ -155,6 +156,9 @@ For each occurrence, output:
 Do NOT modify source code.
 
 
+NOTE: Robust (ServicesServerBase) defaults to <entry-assembly>.ini unless Startup:inifile is set. Track for potential mismatch with canonical template.
+
+
 
 PHASE 3C: UNUSED CONFIG KEYS REPORT
 
@@ -223,8 +227,11 @@ Before coding:
 - Identify file and lines affected
 - Wait for confirmation
 
-
-
-
-
-
+UNIFICATION BLOCKERS (PHASE 3D TAGS)
+- inimaster: OpenSim/Tools/Configger/ConfigurationLoader.cs:73 (section=UNKNOWN, default="OpenSim.ini"); OpenSim/Region/Application/ConfigurationLoader.cs:85 (section=Startup, default="OpenSim.ini.template")
+- inifile: OpenSim/Tools/Configger/ConfigurationLoader.cs:103 (section=UNKNOWN, default=Path.Combine(".", "OpenSim.ini"); OpenSim/Server/Base/ServicesServerBase.cs:91 (section=Startup, default=iniFile); OpenSim/Region/Application/ConfigurationLoader.cs:118 (section=Startup, default="OpenSim.ini")
+- ConfigDirectory: OpenSim/Framework/Util.cs:2321 (section=Startup, default="."); OpenSim/Server/Base/ServicesServerBase.cs:133 (section=Startup, default=m_configDirectory)
+- RegistryLocation: OpenSim/Server/ServerMain.cs:126 (section=Startup, default="."); OpenSim/Region/Application/OpenSimBase.cs:180 (section=Startup, default=String.Empty)
+- physics: OpenSim/Region/Application/ConfigurationLoader.cs:421 (section=Startup, default=none); OpenSim/Region/PhysicsModules/BasicPhysics/BasicPhysicsScene.cs:80 (section=Startup, default=string.Empty); OpenSim/Region/PhysicsModules/BulletS/BSScene.cs:225 (section=Startup, default=string.Empty); OpenSim/Region/PhysicsModules/BulletS/ExtendedPhysics.cs:95 (section=Startup, default=string.Empty); OpenSim/Region/PhysicsModules/POS/POSScene.cs:73 (section=Startup, default=string.Empty); OpenSim/Region/PhysicsModules/ubOde/ODEModule.cs:47 (section=Startup, default=string.Empty)
+- meshing: OpenSim/Region/Application/ConfigurationLoader.cs:422 (section=Startup, default=none); OpenSim/Region/PhysicsModules/BulletS/BSScene.cs:228 (section=Startup, default=string.Empty); OpenSim/Region/PhysicsModules/Meshing/ZeroMesher.cs:77 (section=Startup, default=Name); OpenSim/Region/PhysicsModules/ubOde/ODEModule.cs:51 (section=Startup, default=string.Empty); OpenSim/Region/PhysicsModules/ubOdeMeshing/Meshmerizer.cs:96 (section=Startup, default=string.Empty); OpenSim/Region/PhysicsModules/Meshing/Meshmerizer/Meshmerizer.cs:95 (section=Startup, default=string.Empty)
+- regionload_regionsdir: OpenSim/Region/Application/OpenSim.cs:752 (section=Startup, default="Regions"); OpenSim/ApplicationPlugins/LoadRegions/RegionLoaderFileSystem.cs:57 (section=Startup, default=regionConfigPath); OpenSim/ApplicationPlugins/RemoteController/RemoteAdminPlugin.cs:815 (section=Startup, default=regionConfigPath)
