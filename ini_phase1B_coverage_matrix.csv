@@ -1,0 +1,672 @@
+Section,Key,Present in OpenSimDefaults.ini,Present in OpenSim.ini,Present in OpenSim.ini.template,Notes
+Startup,ConsolePrompt,yes,yes,yes,
+Startup,ConsoleHistoryFileEnabled,yes,yes,yes,
+Startup,LogFile,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini"
+Startup,ConsoleHistoryFile,yes,yes,yes,
+Startup,ConsoleHistoryFileLines,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=100; OpenSim.ini=500
+Startup,ConsoleHistoryTimeStamp,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini.template | conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=false; OpenSim.ini=true"
+Startup,save_crashes,yes,yes,yes,
+Startup,crash_dir,yes,yes,yes,
+Startup,PIDFile,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Startup,startup_console_commands_file,yes,yes,yes,
+Startup,shutdown_console_commands_file,yes,yes,yes,
+Startup,timer_Script,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Startup,timer_Interval,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Startup,async_call_method,yes,yes,yes,
+Startup,MaxPoolThreads,yes,yes,yes,
+Startup,JobEngineEnabled,yes,yes,yes,
+Startup,RegistryLocation,yes,yes,yes,
+Startup,ConfigDirectory,yes,yes,yes,"conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template="".""; OpenSim.ini=""./config-include"""
+Startup,clientstack_plugin,yes,yes,yes,
+Startup,region_info_source,yes,yes,yes,
+Startup,regionload_regionsdir,yes,yes,yes,"present but commented: OpenSimDefaults.ini | conflicting default values: OpenSimDefaults.ini=""C:\somewhere\xmlfiles\""; OpenSim.ini=""Estates""; OpenSim.ini.template=""Regions"""
+Startup,regionload_webserver_url,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Startup,allow_regionless,yes,yes,yes,
+Startup,see_into_region,yes,yes,yes,
+Startup,LegacySitOffsets,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Startup,MaxPrimUndos,yes,yes,yes,
+Startup,NonPhysicalPrimMin,yes,yes,yes,present but commented: OpenSimDefaults.ini
+Startup,NonPhysicalPrimMax,yes,yes,yes,
+Startup,PhysicalPrimMin,yes,yes,yes,present but commented: OpenSimDefaults.ini
+Startup,PhysicalPrimMax,yes,yes,yes,
+Startup,ClampPrimSize,yes,yes,yes,
+Startup,LinksetPrims,yes,yes,yes,
+Startup,AllowScriptCrossing,yes,yes,yes,present but commented: OpenSim.ini.template | conflicting default values: OpenSimDefaults.ini+OpenSim.ini=true; OpenSim.ini.template=false
+Startup,TrustBinaries,yes,yes,yes,
+Startup,DefaultDrawDistance,yes,yes,yes,present but commented: OpenSimDefaults.ini | conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=255.0; OpenSim.ini=512.0
+Startup,MaxDrawDistance,yes,yes,yes,present but commented: OpenSimDefaults.ini | conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=512; OpenSim.ini=4096
+Startup,MaxRegionsViewDistance,yes,yes,yes,present but commented: OpenSimDefaults.ini | conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=255; OpenSim.ini=512
+Startup,MinRegionsViewDistance,yes,yes,yes,present but commented: OpenSimDefaults.ini
+Startup,InworldRestartShutsDown,yes,yes,yes,conflicting default values: OpenSimDefaults.ini=false; OpenSim.ini+OpenSim.ini.template=true
+Startup,Normalized55FPS,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini"
+Startup,FrameTime,yes,yes,yes,
+Startup,FrameTimeWarnPercent,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini"
+Startup,FrameTimeCritPercent,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini"
+Startup,UpdateObjectsEveryNFrames,yes,yes,yes,
+Startup,UpdateAgentsEveryNFrames,yes,yes,yes,
+Startup,UpdateEntityMovementEveryNFrames,yes,yes,yes,
+Startup,UpdateCoarseLocationsEveryNFrames,yes,yes,yes,
+Startup,UpdatePhysicsEveryNFrames,yes,yes,yes,
+Startup,UpdateEventsEveryNFrames,yes,yes,yes,
+Startup,UpdateTerrainEveryNFrames,yes,yes,yes,
+Startup,UpdateStorageEveryNFrames,yes,yes,yes,
+Startup,UpdateTempCleaningEveryNSeconds,yes,yes,yes,
+Startup,MinimumTimeBeforePersistenceConsidered,yes,yes,yes,
+Startup,MaximumTimeBeforePersistenceConsidered,yes,yes,yes,
+Startup,collidable_prim,yes,yes,yes,
+Startup,physical_prim,yes,yes,yes,
+Startup,meshing,yes,yes,yes,present but commented: OpenSimDefaults.ini | conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=ubODEMeshmerizer; OpenSim.ini=Meshmerizer
+Startup,DecodedSculptMapPath,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Startup,CacheSculptMaps,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Startup,physics,yes,yes,yes,present but commented: OpenSimDefaults.ini | conflicting default values: OpenSimDefaults.ini=BulletSim; OpenSim.ini+OpenSim.ini.template=ubODE
+Startup,DefaultScriptEngine,yes,yes,yes,present but commented: OpenSimDefaults.ini
+Startup,HttpProxy,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Startup,HttpProxyExceptions,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Startup,emailmodule,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini"
+Startup,enableflyslow,yes,yes,yes,
+Startup,LogShowStatsSeconds,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Startup,Stats_URI,yes,yes,yes,
+Startup,ManagedStatsRemoteFetchURI,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Startup,StartDisabled,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini.template"
+Startup,UseCSJ2K,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Startup,UseTrashOnDelete,yes,yes,yes,
+Startup,LogOverloads,yes,yes,yes,
+Startup,SpawnPointRouting,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini.template"
+Startup,TelehubAllowLandmark,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini.template | conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=false; OpenSim.ini=true"
+Startup,EnableCertConverter,yes,yes,yes,
+Startup,PemCertPublicKey,yes,yes,yes,
+Startup,PemCertPrivateKey,yes,yes,yes,
+Startup,outputCertName,yes,yes,yes,
+Startup,outputCertPassword,yes,yes,yes,
+Startup,EnableSelfsignedCertSupport,yes,yes,yes,
+Startup,CertRenewOnStartup,yes,yes,yes,
+Startup,CertFileName,yes,yes,yes,
+Startup,CertPassword,yes,yes,yes,
+Startup,CertHostName,yes,yes,yes,
+Startup,CertHostIp,yes,yes,yes,
+Startup,NoVerifyCertChain,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini.template"
+Startup,NoVerifyCertHostname,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini.template"
+Startup,economymodule,no,yes,no,missing from template
+Startup,repeating_console_commands_file,no,no,yes,present but commented: OpenSim.ini.template
+Map,GenerateMaptiles,yes,yes,yes,present but commented: OpenSimDefaults.ini
+Map,WorldMapModule,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini"
+Map,MapImageModule,yes,yes,yes,"present but commented: OpenSimDefaults.ini | conflicting default values: OpenSimDefaults.ini=""MapImageModule""; OpenSim.ini+OpenSim.ini.template=""Warp3DImageModule"""
+Map,BlacklistTimeout,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini"
+Map,MaptileRefresh,yes,yes,yes,present but commented: OpenSimDefaults.ini | conflicting default values: OpenSimDefaults.ini=0; OpenSim.ini+OpenSim.ini.template=3600
+Map,MaptileStaticUUID,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Map,DrawPrimOnMapTile,yes,yes,yes,
+Map,TextureOnMapTile,yes,yes,yes,
+Map,TexturePrims,yes,yes,yes,
+Map,TexturePrimSize,yes,yes,yes,
+Map,RenderMeshes,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=false; OpenSim.ini=true
+Map,RenderMaxHeight,yes,yes,yes,present but commented: OpenSimDefaults.ini | conflicting default values: OpenSimDefaults.ini=4086; OpenSim.ini+OpenSim.ini.template=200
+Map,RenderMinHeight,yes,yes,yes,present but commented: OpenSimDefaults.ini | conflicting default values: OpenSimDefaults.ini=-100; OpenSim.ini+OpenSim.ini.template=1
+Map,ShowNPCs,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini"
+Map,MapColorWater,no,yes,no,missing from template
+Map,MaptileDirectory,no,yes,no,missing from template
+Map,MaptileMaxObjectHeight,no,yes,no,missing from template
+Map,MaptileMinObjectHeight,no,yes,no,missing from template
+Map,TilesStoragePath,no,yes,no,missing from template
+Permissions,permissionmodules,yes,yes,yes,"present but commented: OpenSimDefaults.ini | conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=""DefaultPermissionsModule""; OpenSim.ini=DefaultPermissionsModule"
+Permissions,serverside_object_permissions,yes,yes,yes,
+Permissions,allow_grid_gods,yes,yes,yes,
+Permissions,region_owner_is_god,yes,yes,yes,present but commented: OpenSimDefaults.ini | conflicting default values: OpenSimDefaults.ini=true; OpenSim.ini+OpenSim.ini.template=false
+Permissions,region_manager_is_god,yes,yes,yes,present but commented: OpenSimDefaults.ini
+Permissions,automatic_gods,yes,yes,yes,
+Permissions,implicit_gods,yes,yes,yes,
+Permissions,allowed_script_creators,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini"
+Permissions,allowed_script_editors,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini"
+Permissions,simple_build_permissions,yes,yes,yes,present but commented: OpenSimDefaults.ini | conflicting default values: OpenSimDefaults.ini=False; OpenSim.ini+OpenSim.ini.template=false
+Permissions,LevelUpload,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini"
+RegionReady,enabled,yes,yes,yes,
+RegionReady,channel_notify,yes,yes,yes,
+RegionReady,login_disable,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=true; OpenSim.ini=false
+RegionReady,alert_uri,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+EstateManagement,AllowRegionRestartFromClient,yes,yes,yes,
+EstateManagement,IgnoreEstateMinorAccessControl,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini | conflicting default values: OpenSimDefaults.ini+OpenSim.ini=true;; OpenSim.ini.template=true"
+EstateManagement,IgnoreEstatePaymentAccessControl,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini"
+UserProfiles,ProfileURL,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+UserProfiles,AllowUserProfileWebURLs,yes,yes,yes,present but commented: OpenSimDefaults.ini
+UserProfiles,ProfileServiceURL,no,yes,no,missing from template
+SMTP,enabled,yes,yes,yes,
+SMTP,internal_object_host,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+SMTP,host_domain_header_from,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+SMTP,SMTP_SERVER_FROM,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+SMTP,SMTP_SERVER_HOSTNAME,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+SMTP,SMTP_SERVER_PORT,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+SMTP,SMTP_SERVER_TLS,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+SMTP,SMTP_SERVER_LOGIN,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+SMTP,SMTP_SERVER_PASSWORD,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+SMTP,SMTP_VerifyCertChain,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+SMTP,SMTP_VerifyCertNames,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+SMTP,enableflyslow,no,no,yes,
+SMTP,Stats_URI,no,no,yes,
+SMTP,StartDisabled,no,no,yes,
+SMTP,UseCSJ2K,no,no,yes,
+SMTP,UseTrashOnDelete,no,no,yes,
+SMTP,LogOverloads,no,no,yes,
+SMTP,SpawnPointRouting,no,no,yes,
+SMTP,EnableCertConverter,no,no,yes,
+SMTP,PemCertPublicKey,no,no,yes,
+SMTP,PemCertPrivateKey,no,no,yes,
+SMTP,outputCertName,no,no,yes,
+SMTP,outputCertPassword,no,no,yes,
+SMTP,EnableSelfsignedCertSupport,no,no,yes,
+SMTP,CertRenewOnStartup,no,no,yes,
+SMTP,CertFileName,no,no,yes,
+SMTP,CertPassword,no,no,yes,
+SMTP,CertHostName,no,no,yes,
+SMTP,CertHostIp,no,no,yes,
+Network,ConsoleUser,yes,yes,yes,
+Network,ConsolePass,yes,yes,yes,
+Network,http_listener_port,yes,yes,yes,
+Network,console_port,yes,yes,yes,
+Network,http_listener_ssl,yes,yes,yes,
+Network,http_listener_sslport,yes,yes,yes,
+Network,http_listener_cn,yes,yes,yes,
+Network,http_listener_cert_path,yes,yes,yes,
+Network,http_listener_cert_pass,yes,yes,yes,
+Network,https_listener,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Network,https_port,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Network,cert_path,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Network,cert_pass,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Network,HttpBodyMaxLenMAX,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Network,ExternalHostNameForLSL,yes,yes,yes,present but commented: OpenSimDefaults.ini | conflicting default values: OpenSimDefaults.ini=127.0.0.1; OpenSim.ini+OpenSim.ini.template=${Const|BaseHostname}
+Network,OutboundDisallowForUserScripts,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=0.0.0.0/8|10.0.0.0/8|100.64.0.0/10|127.0.0.0/8|169.254.0.0/16|172.16.0.0/12|192.0.0.0/24|192.0.2.0/24|192.88.99.0/24|192.168.0.0/16|198.18.0.0/15|198.51.100.0/24|203.0.113.0/24|224.0.0.0/4|240.0.0.0/4|255.255.255.255/32; OpenSim.ini.template=
+Network,shard,yes,yes,yes,"conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=""OpenSim""; OpenSim.ini=""MoonlightEstates"""
+Network,user_agent,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Network,MaxRequestConcurrency,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+ScriptsHttpRequestModule,MaxPoolThreads,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+ScriptsHttpRequestModule,PrimRequestsPerSec,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+ScriptsHttpRequestModule,PrimRequestsBurst,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+ScriptsHttpRequestModule,PrimOwnerRequestsPerSec,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+ScriptsHttpRequestModule,PrimOwnerRequestsBurst,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+ScriptsHttpRequestModule,RequestsTimeOut,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+AccessControl,AllowedClients,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+AccessControl,DeniedClients,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+ClientStack.LindenUDP,scene_throttle_max_bps,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+ClientStack.LindenUDP,client_throttle_max_bps,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+ClientStack.LindenUDP,adaptive_throttle_min_bps,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+ClientStack.LindenUDP,enable_adaptive_throttles,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+ClientStack.LindenUDP,TextureSendLimit,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+ClientStack.LindenUDP,DisableFacelights,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini.template | conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=false; OpenSim.ini=""true"""
+ClientStack.LindenUDP,AckTimeout,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+ClientStack.LindenUDP,PausedAckTimeout,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+ClientStack.LindenUDP,SupportViewerObjectsCache,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+ClientStack.LindenCaps,Cap_AttachmentResources,yes,yes,yes,
+ClientStack.LindenCaps,Cap_ChatSessionRequest,yes,yes,yes,
+ClientStack.LindenCaps,Cap_CopyInventoryFromNotecard,yes,yes,yes,
+ClientStack.LindenCaps,Cap_DispatchRegionInfo,yes,yes,yes,
+ClientStack.LindenCaps,Cap_EstateAccess,yes,yes,yes,
+ClientStack.LindenCaps,Cap_EstateChangeInfo,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template | conflicting default values: OpenSimDefaults.ini+OpenSim.ini=""localhost""  broken on viewers; OpenSim.ini.template=""localhost"""
+ClientStack.LindenCaps,Cap_EnvironmentSettings,yes,yes,yes,"conflicting default values: OpenSimDefaults.ini+OpenSim.ini=""localhost"" ; this also controls ExtEnvironment cap; OpenSim.ini.template=""localhost"""
+ClientStack.LindenCaps,Cap_EventQueueGet,yes,yes,yes,
+ClientStack.LindenCaps,Cap_FetchInventory,yes,yes,yes,
+ClientStack.LindenCaps,Cap_ObjectMedia,yes,yes,yes,
+ClientStack.LindenCaps,Cap_ObjectMediaNavigate,yes,yes,yes,
+ClientStack.LindenCaps,Cap_FetchLib,yes,yes,yes,
+ClientStack.LindenCaps,Cap_FetchLibDescendents,yes,yes,yes,
+ClientStack.LindenCaps,Cap_GetDisplayNames,yes,yes,yes,
+ClientStack.LindenCaps,Cap_GetTexture,yes,yes,yes,
+ClientStack.LindenCaps,Cap_GetMesh,yes,yes,yes,
+ClientStack.LindenCaps,Cap_GetMesh2,yes,yes,yes,
+ClientStack.LindenCaps,Cap_GetAsset,yes,yes,yes,
+ClientStack.LindenCaps,Cap_GetObjectCost,yes,yes,yes,
+ClientStack.LindenCaps,Cap_GetObjectPhysicsData,yes,yes,yes,
+ClientStack.LindenCaps,Cap_GroupProposalBallot,yes,yes,yes,
+ClientStack.LindenCaps,Cap_GroupMemberData,yes,yes,yes,
+ClientStack.LindenCaps,Cap_HomeLocation,yes,yes,yes,
+ClientStack.LindenCaps,Cap_LandResources,yes,yes,yes,
+ClientStack.LindenCaps,Cap_MapLayer,yes,yes,yes,
+ClientStack.LindenCaps,Cap_MapLayerGod,yes,yes,yes,
+ClientStack.LindenCaps,Cap_NewFileAgentInventory,yes,yes,yes,
+ClientStack.LindenCaps,Cap_NewFileAgentInventoryVariablePrice,yes,yes,yes,
+ClientStack.LindenCaps,Cap_ObjectAdd,yes,yes,yes,
+ClientStack.LindenCaps,Cap_ParcelPropertiesUpdate,yes,yes,yes,
+ClientStack.LindenCaps,Cap_ParcelMediaURLFilterList,yes,yes,yes,
+ClientStack.LindenCaps,Cap_ParcelNavigateMedia,yes,yes,yes,
+ClientStack.LindenCaps,Cap_ParcelVoiceInfoRequest,yes,yes,yes,
+ClientStack.LindenCaps,Cap_ProductInfoRequest,yes,yes,yes,
+ClientStack.LindenCaps,Cap_ProvisionVoiceAccountRequest,yes,yes,yes,
+ClientStack.LindenCaps,Cap_RemoteParcelRequest,yes,yes,yes,
+ClientStack.LindenCaps,Cap_RequestTextureDownload,yes,yes,yes,
+ClientStack.LindenCaps,Cap_SearchStatRequest,yes,yes,yes,
+ClientStack.LindenCaps,Cap_SearchStatTracking,yes,yes,yes,
+ClientStack.LindenCaps,Cap_SendPostcard,yes,yes,yes,
+ClientStack.LindenCaps,Cap_SendUserReport,yes,yes,yes,
+ClientStack.LindenCaps,Cap_SendUserReportWithScreenshot,yes,yes,yes,
+ClientStack.LindenCaps,Cap_ServerReleaseNotes,yes,yes,yes,
+ClientStack.LindenCaps,Cap_SimConsole,yes,yes,yes,
+ClientStack.LindenCaps,Cap_SimulatorFeatures,yes,yes,yes,
+ClientStack.LindenCaps,Cap_SetDisplayName,yes,yes,yes,
+ClientStack.LindenCaps,Cap_StartGroupProposal,yes,yes,yes,
+ClientStack.LindenCaps,Cap_TextureStats,yes,yes,yes,
+ClientStack.LindenCaps,Cap_UntrustedSimulatorMessage,yes,yes,yes,
+ClientStack.LindenCaps,Cap_UpdateAgentInformation,yes,yes,yes,
+ClientStack.LindenCaps,Cap_UpdateAgentLanguage,yes,yes,yes,
+ClientStack.LindenCaps,Cap_UpdateGestureAgentInventory,yes,yes,yes,
+ClientStack.LindenCaps,Cap_UpdateNotecardAgentInventory,yes,yes,yes,
+ClientStack.LindenCaps,Cap_UpdateScriptAgent,yes,yes,yes,
+ClientStack.LindenCaps,Cap_UpdateGestureTaskInventory,yes,yes,yes,
+ClientStack.LindenCaps,Cap_UpdateNotecardTaskInventory,yes,yes,yes,
+ClientStack.LindenCaps,Cap_UpdateScriptTask,yes,yes,yes,
+ClientStack.LindenCaps,Cap_UploadBakedTexture,yes,yes,yes,
+ClientStack.LindenCaps,Cap_UploadObjectAsset,yes,yes,yes,
+ClientStack.LindenCaps,Cap_ViewerStartAuction,yes,yes,yes,
+ClientStack.LindenCaps,Cap_ViewerStats,yes,yes,yes,
+ClientStack.LindenCaps,Cap_WebFetchInventoryDescendents,yes,yes,yes,
+ClientStack.LindenCaps,Cap_FetchInventoryDescendents2,yes,yes,yes,
+ClientStack.LindenCaps,Cap_FetchInventory2,yes,yes,yes,
+ClientStack.LindenCaps,Cap_FetchLib2,yes,yes,yes,
+ClientStack.LindenCaps,Cap_FetchLibDescendents2,yes,yes,yes,
+ClientStack.LindenCaps,Cap_AvatarPickerSearch,yes,yes,yes,
+Chat,enabled,yes,yes,yes,
+Chat,whisper_distance,yes,yes,yes,conflicting default values: OpenSimDefaults.ini=10; OpenSim.ini+OpenSim.ini.template=3
+Chat,say_distance,yes,yes,yes,conflicting default values: OpenSimDefaults.ini=20; OpenSim.ini+OpenSim.ini.template=30
+Chat,shout_distance,yes,yes,yes,conflicting default values: OpenSimDefaults.ini=100; OpenSim.ini+OpenSim.ini.template=50
+EntityTransfer,AllowAvatarCrossing,yes,yes,yes,
+EntityTransfer,DisableObjectTransfer,yes,yes,yes,
+EntityTransfer,LevelHGTeleport,yes,yes,yes,
+EntityTransfer,DisableInterRegionTeleportCancellation,yes,yes,yes,
+EntityTransfer,LandingPointBehavior,yes,yes,yes,conflicting default values: OpenSimDefaults.ini=LandingPointBehavior_OS; OpenSim.ini+OpenSim.ini.template=LandingPointBehavior_SL
+Messaging,InstantMessageModule,yes,yes,yes,
+Messaging,MessageTransferModule,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Messaging,OfflineMessageModule,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini.template | conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=OfflineMessageModule; OpenSim.ini=""Offline Message Module V2"""
+Messaging,OfflineMessageURL,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini.template | conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=http://yourserver/Offline.php; OpenSim.ini=${Const|PrivURL}:${Const|PrivatePort}"
+Messaging,MuteListModule,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini.template"
+Messaging,MuteListURL,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Messaging,ForwardOfflineGroupMessages,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini.template"
+Messaging,StorageProvider,no,yes,no,missing from template
+Inventory,CoalesceMultipleObjectsToInventory,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=true; OpenSim.ini.template=false
+Appearance,PersistBakedTextures,yes,yes,yes,
+Appearance,DelayBeforeAppearanceSave,yes,yes,yes,
+Appearance,DelayBeforeAppearanceSend,yes,yes,yes,
+Appearance,ResendAppearanceUpdates,yes,yes,yes,
+Appearance,ReuseTextures,yes,yes,yes,
+Attachments,Enabled,yes,yes,yes,
+Attachments,WearReplacesAll,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini | conflicting default values: OpenSimDefaults.ini+OpenSim.ini=true; OpenSim.ini.template=false"
+Mesh,AllowMeshUpload,yes,yes,yes,
+Mesh,LevelUpload,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini"
+Mesh,UseMeshiesPhysicsMesh,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Mesh,ConvexPrims,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini"
+Mesh,ConvexSculpts,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini"
+Mesh,MeshFileCache,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini"
+Mesh,MeshFileCachePath,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini"
+Mesh,MeshFileCacheDoExpire,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini"
+Mesh,MeshFileCacheExpireHours,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini | conflicting default values: OpenSimDefaults.ini+OpenSim.ini=48; OpenSim.ini.template=72"
+Textures,ReuseDynamicTextures,yes,yes,yes,
+Textures,ReuseDynamicLowDataTextures,yes,yes,yes,
+ODEPhysicsSettings,collect_stats,yes,yes,yes,
+ODEPhysicsSettings,physics_logging,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini | conflicting default values: OpenSimDefaults.ini+OpenSim.ini=true; OpenSim.ini.template=false"
+ODEPhysicsSettings,physics_logging_interval,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+ODEPhysicsSettings,physics_logging_append_existing_logfile,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+ODEPhysicsSettings,world_gravityx,yes,yes,yes,
+ODEPhysicsSettings,world_gravityy,yes,yes,yes,
+ODEPhysicsSettings,world_gravityz,yes,yes,yes,
+ODEPhysicsSettings,avatar_terminal_velocity,yes,yes,yes,
+ODEPhysicsSettings,world_stepsize,yes,yes,yes,
+ODEPhysicsSettings,world_solver_iterations,yes,yes,yes,
+ODEPhysicsSettings,filter_collisions,yes,yes,yes,
+ODEPhysicsSettings,nm_terraincontact_friction,yes,yes,yes,
+ODEPhysicsSettings,nm_terraincontact_bounce,yes,yes,yes,
+ODEPhysicsSettings,nm_terraincontact_erp,yes,yes,yes,
+ODEPhysicsSettings,m_terraincontact_friction,yes,yes,yes,
+ODEPhysicsSettings,m_terraincontact_bounce,yes,yes,yes,
+ODEPhysicsSettings,m_terrainContact_erp,yes,yes,yes,
+ODEPhysicsSettings,m_avatarobjectcontact_friction,yes,yes,yes,
+ODEPhysicsSettings,m_avatarobjectcontact_bounce,yes,yes,yes,
+ODEPhysicsSettings,objectcontact_friction,yes,yes,yes,
+ODEPhysicsSettings,objectcontact_bounce,yes,yes,yes,
+ODEPhysicsSettings,av_density,yes,yes,yes,
+ODEPhysicsSettings,av_height_fudge_factor,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+ODEPhysicsSettings,av_movement_divisor_walk,yes,yes,yes,
+ODEPhysicsSettings,av_movement_divisor_run,yes,yes,yes,
+ODEPhysicsSettings,geometry_default_density,yes,yes,yes,
+ODEPhysicsSettings,body_frames_auto_disable,yes,yes,yes,
+ODEPhysicsSettings,geom_updates_before_throttled_update,yes,yes,yes,
+ODEPhysicsSettings,maximum_mass_object,yes,yes,yes,
+ODEPhysicsSettings,mesh_sculpted_prim,yes,yes,yes,
+ODEPhysicsSettings,mesh_lod,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=32; OpenSim.ini.template=32     ; 32x32 = 1024 vertices
+ODEPhysicsSettings,mesh_physical_lod,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=16; OpenSim.ini.template=16   ; 16x16 = 256 vertices
+ODEPhysicsSettings,MinSizeToMeshmerize,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+BulletSim,BulletEngine,yes,yes,yes,
+BulletSim,UseSeparatePhysicsThread,yes,yes,yes,
+BulletSim,TerrainImplementation,yes,yes,yes,
+BulletSim,TerrainMeshMagnification,yes,yes,yes,
+BulletSim,AvatarToAvatarCollisionsByDefault,yes,yes,yes,
+BulletSim,AvatarHeightLowFudge,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=0      ; Adjustment at low end of height range; OpenSim.ini.template=0
+BulletSim,AvatarHeightMidFudge,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=0      ; Adjustment at mid point of avatar height range; OpenSim.ini.template=0
+BulletSim,AvatarHeightHighFudge,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=0     ; Adjustment at high end of height range; OpenSim.ini.template=0
+BulletSim,AvatarStepHeight,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template | conflicting default values: OpenSimDefaults.ini+OpenSim.ini=0.6              ; The height, below which is considered a step collision.; OpenSim.ini.template=0.6"
+BulletSim,AvatarStepAngle,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template | conflicting default values: OpenSimDefaults.ini+OpenSim.ini=0.3               ; The angle from vertical (in radians) to consider a surface a step; OpenSim.ini.template=0.3"
+BulletSim,AvatarStepApproachFactor,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template | conflicting default values: OpenSimDefaults.ini+OpenSim.ini=2        ; Approach angle factor. O=straight on, .6=~45 degrees.; OpenSim.ini.template=2"
+BulletSim,AvatarStepGroundFudge,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template | conflicting default values: OpenSimDefaults.ini+OpenSim.ini=0.1         ; Fudge added to bottom of avatar below which step collisions happen; OpenSim.ini.template=0.1"
+BulletSim,AvatarStepForceFactor,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template | conflicting default values: OpenSimDefaults.ini+OpenSim.ini=0           ; Avatar is pushed up by its mass times this factor; OpenSim.ini.template=0"
+BulletSim,AvatarStepUpCorrectionFactor,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template | conflicting default values: OpenSimDefaults.ini+OpenSim.ini=0.8  ; Avatar is displaced up the collision height times this factor; OpenSim.ini.template=0.8"
+BulletSim,AvatarStepSmoothingSteps,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template | conflicting default values: OpenSimDefaults.ini+OpenSim.ini=1        ; Number of frames after a step collision that up correction is applied; OpenSim.ini.template=1"
+BulletSim,AvatarTerminalVelocity,yes,yes,yes,
+BulletSim,LinkImplementation,yes,yes,yes,"conflicting default values: OpenSimDefaults.ini+OpenSim.ini=1      ; 0=constraint, 1=compound; OpenSim.ini.template=1"
+BulletSim,LinksetOffsetCenterOfMass,yes,yes,yes,
+BulletSim,MeshSculptedPrim,yes,yes,yes,
+BulletSim,ForceSimplePrimMeshing,yes,yes,yes,
+BulletSim,ShouldRemoveZeroWidthTriangles,yes,yes,yes,
+BulletSim,ShouldUseAssetHulls,yes,yes,yes,
+BulletSim,MaxCollisionsPerFrame,yes,yes,yes,
+BulletSim,MaxUpdatesPerFrame,yes,yes,yes,
+BulletSim,PhysicsLoggingEnabled,yes,yes,yes,
+BulletSim,PhysicsLoggingDir,yes,yes,yes,
+BulletSim,VehicleLoggingEnabled,yes,yes,yes,
+RemoteAdmin,enabled,yes,yes,yes,
+RemoteAdmin,port,yes,yes,yes,
+RemoteAdmin,bind_ip_address,yes,yes,yes,
+RemoteAdmin,access_password,yes,yes,yes,
+RemoteAdmin,access_ip_addresses,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template | conflicting default values: OpenSimDefaults.ini+OpenSim.ini=0.0.0.0, 0.0.0.0 ...; OpenSim.ini.template="
+RemoteAdmin,create_region_enable_voice,yes,yes,yes,
+RemoteAdmin,create_region_public,yes,yes,yes,
+RemoteAdmin,region_file_template,yes,yes,yes,
+RemoteAdmin,region_limit,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+RemoteAdmin,enabled_methods,yes,yes,yes,
+RemoteAdmin,default_male,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+RemoteAdmin,default_female,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+RemoteAdmin,copy_folders,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+RemoteAdmin,default_appearance,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+RemoteAdmin,god_key,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+RemoteAdmin,prefix,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+RemoteAdmin,authenticate,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+RemoteAdmin,secured,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+RemoteAdmin,extended-escape,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+RemoteAdmin,realm,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+RemoteAdmin,dump-asset,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+RemoteAdmin,path-fill,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+RemoteAdmin,dump-line-size,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+RemoteAdmin,flush-on-error,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+IRC,enabled,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=false; you need to set this to true otherwise it won't connect; OpenSim.ini.template=false
+IRC,server,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+IRC,password,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+IRC,nick,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+IRC,channel,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+IRC,user,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+IRC,port,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+IRC,commands_enabled,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+IRC,command_channel,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+IRC,report_clients,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+IRC,relay_private_channels,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+IRC,relay_private_channel_in,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+IRC,relay_private_channel_out,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+IRC,relay_chat,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+IRC,access_password,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+IRC,msgformat,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+IRC,exclude_list,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+IRC,alert_show,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+IRC,alert_show_serverinfo,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+IRC,alert_msg_pre,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+IRC,alert_msg_post,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Wind,enabled,yes,yes,yes,
+Wind,wind_update_rate,yes,yes,yes,
+Wind,wind_plugin,yes,yes,yes,present but commented: OpenSim.ini.template | conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=SimpleRandomWind; OpenSim.ini=ConfigurableWind
+Wind,avg_strength,yes,yes,yes,present but commented: OpenSimDefaults.ini | conflicting default values: OpenSimDefaults.ini=5.0; OpenSim.ini+OpenSim.ini.template=3.0
+Wind,avg_direction,yes,yes,yes,present but commented: OpenSimDefaults.ini | conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=0.0; OpenSim.ini=45.0
+Wind,var_strength,yes,yes,yes,present but commented: OpenSimDefaults.ini | conflicting default values: OpenSimDefaults.ini=0.0; OpenSim.ini=2.0; OpenSim.ini.template=1.0
+Wind,var_direction,yes,yes,yes,present but commented: OpenSimDefaults.ini | conflicting default values: OpenSimDefaults.ini=0.0; OpenSim.ini=15.0; OpenSim.ini.template=90.0
+Wind,rate_change,yes,yes,yes,present but commented: OpenSimDefaults.ini | conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=1.0; OpenSim.ini=0.35
+Wind,strength,yes,yes,yes,present but commented: OpenSim.ini.template
+Trees,enabled,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=true; OpenSim.ini.template=false
+Trees,active_trees,yes,yes,yes,
+Trees,update_rate,yes,yes,yes,
+Trees,allowGrow,yes,yes,yes,
+VectorRender,font_name,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+LL-Functions,AllowosConsoleCommand,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+LL-Functions,AllowGodFunctions,yes,yes,yes,
+LL-Functions,RestrictEmail,yes,yes,yes,
+LL-Functions,max_listens_per_region,yes,yes,yes,
+LL-Functions,max_listens_per_script,yes,yes,yes,
+LL-Functions,max_external_urls_per_simulator,yes,yes,yes,
+LL-Functions,UseSimpleBoxesInGetBoundingBox,yes,yes,yes,
+LL-Functions,AddStatsInGetBoundingBox,yes,yes,yes,
+LL-Functions,LowerAvatarBoundingBoxStandingXconst,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=-0.275; OpenSim.ini.template=-0.275    ; PURPOSE: left extent X constant when standing
+LL-Functions,UpperAvatarBoundingBoxStandingXconst,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=0.275; OpenSim.ini.template=0.275    ; PURPOSE: right extent X constant when standing
+LL-Functions,LowerAvatarBoundingBoxStandingYconst,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=-0.35; OpenSim.ini.template=-0.35     ; PURPOSE: back extent Y constant when standing
+LL-Functions,UpperAvatarBoundingBoxStandingYconst,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=0.35; OpenSim.ini.template=0.35     ; PURPOSE: front extent Y constant when standing
+LL-Functions,LowerAvatarBoundingBoxStandingZconst,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=-0.1; OpenSim.ini.template=-0.1      ; PURPOSE: base Z constant when standing
+LL-Functions,LowerAvatarBoundingBoxStandingZcoeff,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=-0.5; OpenSim.ini.template=-0.5      ; PURPOSE: base Z scaled by avatar height when standing
+LL-Functions,UpperAvatarBoundingBoxStandingZconst,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=0.1; OpenSim.ini.template=0.1      ; PURPOSE: top Z constant when standing
+LL-Functions,UpperAvatarBoundingBoxStandingZcoeff,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=0.5; OpenSim.ini.template=0.5      ; PURPOSE: top Z scaled by avatar height when standing
+LL-Functions,LowerAvatarBoundingBoxGroundsittingXconst,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=-0.3875; OpenSim.ini.template=-0.3875  ; PURPOSE: left extent X constant when ground-sitting
+LL-Functions,UpperAvatarBoundingBoxGroundsittingXconst,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=0.3875; OpenSim.ini.template=0.3875  ; PURPOSE: right extent X constant when ground-sitting
+LL-Functions,LowerAvatarBoundingBoxGroundsittingYconst,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=-0.5; OpenSim.ini.template=-0.5     ; PURPOSE: back extent Y constant when ground-sitting
+LL-Functions,UpperAvatarBoundingBoxGroundsittingYconst,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=0.5; OpenSim.ini.template=0.5     ; PURPOSE: front extent Y constant when ground-sitting
+LL-Functions,LowerAvatarBoundingBoxGroundsittingZconst,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=-0.05; OpenSim.ini.template=-0.05    ; PURPOSE: base Z constant when ground-sitting
+LL-Functions,LowerAvatarBoundingBoxGroundsittingZcoeff,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=-0.375; OpenSim.ini.template=-0.375   ; PURPOSE: base Z scaled by avatar height when ground-sitting
+LL-Functions,UpperAvatarBoundingBoxGroundsittingZconst,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=0.5; OpenSim.ini.template=0.5     ; PURPOSE: top Z constant when ground-sitting
+LL-Functions,UpperAvatarBoundingBoxGroundsittingZcoeff,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=0.0; OpenSim.ini.template=0.0     ; PURPOSE: top Z scaled by avatar height when ground-sitting
+LL-Functions,LowerAvatarBoundingBoxSittingXconst,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=-0.5875; OpenSim.ini.template=-0.5875    ; PURPOSE: left extent X constant when sitting
+LL-Functions,UpperAvatarBoundingBoxSittingXconst,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=0.1875; OpenSim.ini.template=0.1875    ; PURPOSE: right extent X constant when sitting
+LL-Functions,LowerAvatarBoundingBoxSittingYconst,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=-0.35; OpenSim.ini.template=-0.35      ; PURPOSE: back extent Y constant when sitting
+LL-Functions,UpperAvatarBoundingBoxSittingYconst,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=0.35; OpenSim.ini.template=0.35      ; PURPOSE: front extent Y constant when sitting
+LL-Functions,LowerAvatarBoundingBoxSittingZconst,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=-0.35; OpenSim.ini.template=-0.35      ; PURPOSE: base Z constant when sitting
+LL-Functions,LowerAvatarBoundingBoxSittingZcoeff,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=-0.375; OpenSim.ini.template=-0.375     ; PURPOSE: base Z scaled by avatar height when sitting
+LL-Functions,UpperAvatarBoundingBoxSittingZconst,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=-0.25; OpenSim.ini.template=-0.25      ; PURPOSE: top Z constant when sitting
+LL-Functions,UpperAvatarBoundingBoxSittingZcoeff,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=0.25; OpenSim.ini.template=0.25      ; PURPOSE: top Z scaled by avatar height when sitting
+LL-Functions,PrimBoundingBoxSafetyCoefficientX,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=2.414214; OpenSim.ini.template=2.414214  ; PURPOSE: safety factor for X bounds worst-case twisted/sheared
+LL-Functions,PrimBoundingBoxSafetyCoefficientY,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=2.414214; OpenSim.ini.template=2.414214  ; PURPOSE: safety factor for Y bounds worst-case twisted/sheared
+LL-Functions,PrimBoundingBoxSafetyCoefficientZ,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini=1.618034; OpenSim.ini.template=1.618034  ; PURPOSE: safety factor for Z bounds worst-case tube style shapes
+LL-Functions,UseLlCastRayV3,yes,yes,yes,
+LL-Functions,FloatToleranceInLlCastRay,yes,yes,yes,
+LL-Functions,FloatTolerance2InLlCastRay,yes,yes,yes,
+LL-Functions,PrimDetailLevelInLlCastRay,yes,yes,yes,
+LL-Functions,SculptDetailLevelInLlCastRay,yes,yes,yes,
+LL-Functions,MeshDetailLevelInLlCastRay,yes,yes,yes,
+LL-Functions,AvatarDetailLevelInLlCastRay,yes,yes,yes,
+LL-Functions,MaxHitsInLlCastRay,yes,yes,yes,
+LL-Functions,MaxHitsPerPrimInLlCastRay,yes,yes,yes,
+LL-Functions,MaxHitsPerObjectInLlCastRay,yes,yes,yes,
+LL-Functions,DetectExitHitsInLlCastRay,yes,yes,yes,
+LL-Functions,DoAttachmentsInLlCastRay,yes,yes,yes,
+LL-Functions,ThrottleTimeInMsInLlCastRay,yes,yes,yes,
+LL-Functions,AvailableTimeInMsPerRegionInLlCastRay,yes,yes,yes,
+LL-Functions,AvailableTimeInMsPerAvatarInLlCastRay,yes,yes,yes,
+LL-Functions,RequiredAvailableTimeInMsInLlCastRay,yes,yes,yes,
+LL-Functions,MaximumAvailableTimeInMsInLlCastRay,yes,yes,yes,
+LL-Functions,UseMeshCacheInLlCastRay,yes,yes,yes,
+DataSnapshot,index_sims,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=false; OpenSim.ini=true
+DataSnapshot,data_exposure,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=minimum; OpenSim.ini=all
+DataSnapshot,gridname,yes,yes,yes,"conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=""OSGrid""; OpenSim.ini=""Moonlight"""
+DataSnapshot,default_snapshot_period,yes,yes,yes,
+DataSnapshot,snapshot_cache_directory,yes,yes,yes,
+DataSnapshot,DATA_SRV_MISearch,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+DataSnapshot,economy,no,yes,no,missing from template
+DataSnapshot,economymodule,no,yes,no,missing from template
+DataSnapshot,DATA_SRV_CustomSearch,no,no,yes,present but commented: OpenSim.ini.template
+Economy,economymodule,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Economy,SellEnabled,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Economy,PriceUpload,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Economy,PriceGroupCreate,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Economy,ObjectCount,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Economy,PriceEnergyUnit,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Economy,PriceObjectClaim,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Economy,PricePublicObjectDecay,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Economy,PricePublicObjectDelete,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Economy,PriceParcelClaim,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Economy,PriceParcelClaimFactor,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Economy,PriceRentLight,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Economy,TeleportMinPrice,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Economy,TeleportPriceExponent,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Economy,EnergyEfficiency,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Economy,PriceObjectRent,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Economy,PriceObjectScaleFactor,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Economy,PriceParcelRent,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Economy,MeshModelAllowTextureToInventory,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+YEngine,Enabled,yes,yes,yes,
+YEngine,ScriptStackSize,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini.template"
+YEngine,ScriptHeapSize,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini.template | conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=1024; OpenSim.ini=2048"
+YEngine,NumThreadScriptWorkers,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini.template | conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=2; OpenSim.ini=4"
+YEngine,Priority,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini.template | conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=Normal; OpenSim.ini=""AboveNormal"""
+YEngine,UseSourceHashCode,yes,yes,yes,
+YEngine,MaintenanceInterval,yes,yes,yes,
+YEngine,AsyncLLCommandLoopms,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini.template | conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=100; OpenSim.ini=50"
+YEngine,ScriptDelayFactor,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini.template"
+YEngine,ScriptDistanceLimitFactor,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini.template"
+YEngine,NotecardLineReadCharsMax,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+YEngine,MinTimerInterval,yes,yes,yes,
+YEngine,SensorMaxRange,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+YEngine,SensorMaxResults,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+YEngine,AutomaticLinkPermission,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini.template"
+YEngine,DisableUndergroundMovement,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini.template"
+YEngine,ScriptEnginesPath,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+YEngine,ScriptDebug,no,yes,no,missing from template
+YEngine,ScriptDebugSaveIL,no,yes,no,missing from template
+YEngine,ScriptDebugSaveSource,no,yes,no,missing from template
+YEngine,scripts_enabled,no,yes,no,missing from template
+YEngine,TraceCalls,no,yes,no,missing from template
+YEngine,Verbose,no,yes,no,missing from template
+Concierge,enabled,yes,yes,yes,
+Concierge,whoami,yes,yes,yes,present but commented: OpenSim.ini.template
+Concierge,password,yes,yes,yes,present but commented: OpenSim.ini.template
+Concierge,regions,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template | conflicting default values: OpenSimDefaults.ini+OpenSim.ini=""^MeetingSpace-""; OpenSim.ini.template="""""
+Concierge,welcomes,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Concierge,broker,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Hypergrid,safemode,yes,yes,yes,
+VivoxVoice,enabled,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=false; OpenSim.ini=true
+VivoxVoice,vivox_server,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=www.foobar.vivox.com; OpenSim.ini=www.osp.vivox.com
+VivoxVoice,vivox_sip_uri,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=foobar.vivox.com; OpenSim.ini=osp.vivox.com
+VivoxVoice,vivox_admin_user,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=DeepThroat; OpenSim.ini=sonjomas6622-admin
+VivoxVoice,vivox_admin_password,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=VoiceG4te; OpenSim.ini=8aIc7Aty
+VivoxVoice,vivox_channel_type,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+VivoxVoice,vivox_channel_distance_model,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+VivoxVoice,vivox_channel_mode,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+VivoxVoice,vivox_channel_roll_off,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+VivoxVoice,vivox_channel_max_range,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+VivoxVoice,vivox_channel_clamping_distance,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Groups,Enabled,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=false; OpenSim.ini=true
+Groups,Module,yes,yes,yes,"conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=Default; OpenSim.ini=""Groups Module V2"""
+Groups,NoticesEnabled,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini.template"
+Groups,DebugEnabled,yes,yes,yes,
+Groups,DebugMessagingEnabled,yes,yes,yes,
+Groups,GroupsCacheTimeout,yes,yes,yes,
+Groups,MessagingModule,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini.template | conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=GroupsMessagingModule; OpenSim.ini=""Groups Messaging Module V2"""
+Groups,MessagingEnabled,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini.template"
+Groups,MessageOnlineUsersOnly,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=false; OpenSim.ini=true
+Groups,ServicesConnectorModule,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini.template | conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=XmlRpcGroupsServicesConnector; OpenSim.ini=""Groups HG Service Connector"""
+Groups,GroupsServerURI,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini.template | conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=http://yourxmlrpcserver.com/xmlrpc.php; OpenSim.ini=${Const|PrivURL}:${Const|PrivatePort}"
+Groups,XmlRpcServiceReadKey,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Groups,XmlRpcServiceWriteKey,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Groups,XmlRpcDisableKeepAlive,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+Groups,LevelGroupCreate,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini.template"
+Groups,HomeURI,no,yes,no,missing from template
+Groups,LocalService,no,yes,no,missing from template
+Groups,SecretKey,no,yes,no,missing from template
+Groups,StorageProvider,no,yes,no,missing from template
+PacketPool,RecyclePackets,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini"
+PacketPool,RecycleDataBlocks,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini"
+PacketPool,RecycleBaseUDPPackets,yes,yes,yes,
+InterestManagement,UpdatePrioritizationScheme,yes,yes,yes,
+InterestManagement,ReprioritizationEnabled,yes,yes,yes,
+InterestManagement,ReprioritizationInterval,yes,yes,yes,
+InterestManagement,RootReprioritizationDistance,yes,yes,yes,
+InterestManagement,ChildReprioritizationDistance,yes,yes,yes,
+InterestManagement,ObjectsCullingByDistance,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=false; OpenSim.ini=true
+InterestManagement,RootTerseUpdatePeriod,yes,yes,yes,
+InterestManagement,ChildTerseUpdatePeriod,yes,yes,yes,
+InterestManagement,RootPositionUpdateTolerance,yes,yes,yes,
+InterestManagement,RootRotationUpdateTolerance,yes,yes,yes,
+InterestManagement,RootVelocityUpdateTolerance,yes,yes,yes,
+Monitoring,Enabled,yes,yes,yes,
+Monitoring,ServerStatsEnabled,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+WebStats,enabled,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini"
+Statistics,NumberOfFrames,yes,yes,yes,
+MediaOnAPrim,Enabled,yes,yes,yes,
+NPC,AllowNotOwned,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini.template"
+NPC,AllowSenseAsAvatar,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini.template"
+NPC,AllowCloneOtherAvatars,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini.template"
+NPC,NoNPCGroup,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini.template"
+NPC,AllowNPCCrossRegion,no,yes,no,missing from template
+NPC,AllowNPCGroupMembership,no,yes,no,missing from template
+NPC,AllowNPCTeleport,no,yes,no,missing from template
+NPC,Enabled,no,yes,yes,present but commented: OpenSim.ini.template
+NPC,MaxNumberNPCsPerScene,no,yes,yes,present but commented: OpenSim.ini.template | conflicting default values: OpenSim.ini=42; OpenSim.ini.template=40
+NPC,NPCOptionsMask,no,yes,no,missing from template
+NPC,NPCUpdateRate,no,yes,no,missing from template
+Terrain,InitialTerrain,yes,yes,yes,
+Terrain,SendTerrainUpdatesByViewDistance,yes,yes,yes,
+LandManagement,LimitParcelLayerUpdateDistance,yes,yes,yes,
+LandManagement,ParcelLayerViewDistance,yes,yes,yes,
+LandManagement,ShowParcelBansLines,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=true; OpenSim.ini=false
+LandManagement,BanLineSafeHeight,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+LandManagement,DefaultAdministratorParcelName,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+LandManagement,DefaultAdministratorGroupUUID,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+LandManagement,DefaultAdministratorOwnerUUID,yes,yes,yes,"present but commented: OpenSimDefaults.ini, OpenSim.ini, OpenSim.ini.template"
+JsonStore,Enabled,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=False; OpenSim.ini=true
+JsonStore,EnableObjectStore,yes,yes,yes,
+JsonStore,MaxStringSpace,yes,yes,yes,conflicting default values: OpenSimDefaults.ini+OpenSim.ini.template=0; OpenSim.ini=8192
+JsonStore,ReadWriteTimeout,no,yes,no,missing from template
+AssetService,DefaultAssetLoader,yes,yes,yes,
+AssetService,AssetLoaderArgs,yes,yes,yes,
+AssetService,AssetLoaderEnabled,yes,yes,yes,
+GridService,StorageProvider,yes,yes,yes,
+AutoBackupModule,AutoBackupModuleEnabled,yes,yes,yes,
+Sounds,Module,yes,yes,yes,
+Sounds,MaxDistance,yes,yes,yes,
+ServiceThrottle,Interval,yes,yes,yes,
+Dwell,DwellModule,yes,yes,yes,
+ServerReleaseNotes,ServerReleaseNotesURL,yes,yes,yes,
+Modules,Include-modules,yes,yes,yes,
+Const,BaseHostname,no,yes,no,missing from template
+Const,BaseURL,no,yes,no,missing from template
+Const,PrivatePort,no,yes,no,missing from template
+Const,PrivURL,no,yes,no,missing from template
+Const,PublicPort,no,yes,no,missing from template
+Architecture,Include-Architecture,no,yes,yes,"present but commented: OpenSim.ini.template | conflicting default values: OpenSim.ini=""config-include/GridHypergrid.ini""; OpenSim.ini.template=""config-include/Standalone.ini"""
+OSSL,Include-osslDefaultEnable,no,yes,yes,
+Anaximander,AnaximanderPath,no,yes,no,missing from template
+Anaximander,DatabaseConnection,no,yes,no,missing from template
+Anaximander,Enabled,no,yes,no,missing from template
+Anaximander,GPUAccelerated,no,yes,no,missing from template
+Anaximander,LogLevel,no,yes,no,missing from template
+Anaximander,OutputDirectory,no,yes,no,missing from template
+Anaximander,RenderThreads,no,yes,no,missing from template
+Anaximander,TileSize,no,yes,no,missing from template
+AutoBackup,AutoBackupBusyCheck,no,yes,no,missing from template
+AutoBackup,AutoBackupDir,no,yes,no,missing from template
+AutoBackup,AutoBackupDirCleanup,no,yes,no,missing from template
+AutoBackup,AutoBackupInterval,no,yes,no,missing from template
+AutoBackup,AutoBackupKeepFilesForDays,no,yes,no,missing from template
+AutoBackup,AutoBackupModuleEnabled,no,yes,no,missing from template
+AutoBackup,AutoBackupNaming,no,yes,no,missing from template
+AutoBackup,AutoBackupSkipAssets,no,yes,no,missing from template
+AutoBackup,Enabled,no,yes,no,missing from template
+Console,Console,no,yes,no,missing from template
+ExternalMapRenderer,AutoGenerate,no,yes,no,missing from template
+ExternalMapRenderer,ConfigPath,no,yes,no,missing from template
+ExternalMapRenderer,Enabled,no,yes,no,missing from template
+ExternalMapRenderer,RendererPath,no,yes,no,missing from template
+ExternalMapRenderer,RenderInterval,no,yes,no,missing from template
+ExternalMapRenderer,RenderOnStartup,no,yes,no,missing from template
+FreeSwitchVoice,Enabled,no,no,yes,present but commented: OpenSim.ini.template
+FreeSwitchVoice,LocalServiceModule,no,no,yes,present but commented: OpenSim.ini.template
+FreeSwitchVoice,FreeswitchServiceURL,no,no,yes,present but commented: OpenSim.ini.template
+Gloebit,Enabled,no,yes,no,missing from template
+Gloebit,GLBEnvironment,no,yes,no,missing from template
+Gloebit,GLBKey,no,yes,no,missing from template
+Gloebit,GLBOwnerEmail,no,yes,no,missing from template
+Gloebit,GLBOwnerName,no,yes,no,missing from template
+Gloebit,GLBSecret,no,yes,no,missing from template
+Gloebit,GLBShowNewSessionAuthIM,no,yes,no,missing from template
+Gloebit,GLBShowNewSessionPurchaseIM,no,yes,no,missing from template
+Gloebit,GLBShowWelcomeMessage,no,yes,no,missing from template
+Gloebit,GLBSpecificConnectionString,no,yes,no,missing from template
+Gloebit,GLBSpecificStorageProvider,no,yes,no,missing from template
+Materials,enable_materials,no,yes,no,missing from template
+Materials,MaxMaterialsPerTransaction,no,yes,no,missing from template
+WorldView,ConfigName,no,yes,no,missing from template
+WorldView,Enabled,no,yes,no,missing from template
+XBakes,URL,no,yes,no,missing from template
+CONST,BaseHostname,no,no,yes,
+CONST,BaseURL,no,no,yes,
+CONST,PublicPort,no,no,yes,present but commented: OpenSim.ini.template
+CONST,PrivURL,no,no,yes,
+CONST,PrivatePort,no,no,yes,
+RestPlugins,enabled,no,no,yes,present but commented: OpenSim.ini.template
+RestPlugins,god_key,no,no,yes,present but commented: OpenSim.ini.template
+RestPlugins,prefix,no,no,yes,present but commented: OpenSim.ini.template
+RestPlugins,authenticate,no,no,yes,present but commented: OpenSim.ini.template
+RestPlugins,secured,no,no,yes,present but commented: OpenSim.ini.template

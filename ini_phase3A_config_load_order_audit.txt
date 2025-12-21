@@ -1,0 +1,102 @@
+CONFIG LOAD ORDER AUDIT (PHASE 3A)
+
+OpenSim main (simulator)
+- File: OpenSim/Region/Application/ConfigurationLoader.cs
+- Function: LoadConfigSettings(IConfigSource argvSource, EnvConfigSource envConfigSource, out ConfigSettings, out NetworkServersInfo)
+- Files read:
+  - Startup:inimaster (default OpenSim.ini.template, Util.configDir())
+  - Startup:inifile (default OpenSim.ini, Util.configDir())
+  - Include-* (wildcards; resolved from Util.configDir())
+  - Startup:inidirectory *.ini (default config/)
+  - Environment variables
+  - Command-line argv source
+- Load order:
+  1) inimaster
+  2) inifile
+  3) Include-* discovered during reads (glob results sorted)
+  4) inidirectory overrides merged (file list sorted)
+  5) env vars
+  6) argv
+  7) ReplaceKeyValues()
+- Notes on override behavior:
+  - Later merges override earlier values
+  - inidirectory is an explicit override layer
+  - Missing master/primary files trigger an interactive prompt (Abort/Copy/Interactive/Retry)
+
+Robust services
+- File: OpenSim/Server/Base/ServicesServerBase.cs
+- Function: ServicesServerBase(...) + ReadConfigSource + AddIncludes
+- Files read:
+  - <entry-assembly>.ini or Startup:inifile
+  - Include-* (wildcards; base path ConfigDirectory)
+  - HTTP/HTTPS XML config if URI
+  - Environment variables
+  - Command-line argv source
+- Load order:
+  1) ReadConfigSource(inifile)
+  2) Include loop: AddIncludes -> merge each include
+  3) env vars
+  4) argv
+  5) ReplaceKeyValues()
+- Notes on override behavior:
+  - Later include merges override earlier values
+  - include loop continues until no new include files
+
+Configger tool
+- File: OpenSim/Tools/Configger/ConfigurationLoader.cs
+- Function: LoadConfigSettings(IConfig startupConfig)
+- Files read:
+  - Startup:inimaster (default OpenSim.ini)
+  - Startup:inifile (default ./OpenSim.ini)
+  - Include-* (wildcards; base path .)
+  - HTTP/HTTPS XML config if URI
+- Load order:
+  1) inimaster
+  2) inifile
+  3) Include-* after each load
+- Notes on override behavior:
+  - Later merges override earlier values
+  - No env merge, no argv merge, no ReplaceKeyValues()
+
+Regions (per-region config)
+- File: OpenSim/ApplicationPlugins/LoadRegions/RegionLoaderFileSystem.cs
+- Function: LoadRegions()
+- Files read:
+  - Regions/*.ini (dir from Startup:regionload_regionsdir, default ./Regions)
+  - Regions/*.xml
+- Load order:
+  - .ini files first, then .xml files (filesystem order)
+- Notes on override behavior:
+  - Each file becomes a separate RegionInfo (no merge between region files)
+
+Estates (per-estate config)
+- File: OpenSim/ApplicationPlugins/LoadRegions/EstateLoaderFileSystem.cs
+- Function: LoadEstates()
+- Files read:
+  - Estates/*.ini (dir from Startup:regionload_estatesdir, default ./Estates)
+- Load order:
+  - Sequential file read (filesystem order)
+- Notes on override behavior:
+  - No merge between estate files
+  - Creates new estates only if they do not already exist
+
+RegionInfo per-file loader
+- File: OpenSim/Framework/RegionInfo.cs
+- Function: RegionInfo(string description, string filename, ...)
+- Files read:
+  - Single region file (.ini or .xml)
+- Load order:
+  - Single file per region
+- Notes on override behavior:
+  - If .ini missing, creates a new file with defaults
+
+Call chain (simulator startup)
+- File: OpenSim/Region/Application/OpenSimBase.cs
+  - OpenSimBase(IConfigSource configSource)
+    - LoadConfigSettings(configSource)
+      - ConfigurationLoader.LoadConfigSettings(...)
+      - ConfigSource set, Config set
+      - ReadExtraConfigSettings()
+  - StartupSpecific()
+    - Uses Config[Startup], Config[Network], etc.
+  - LoadRegionsPlugin uses ConfigSource to load Regions/*.ini and Estates/*.ini

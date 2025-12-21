@@ -1,0 +1,45 @@
+Phase 4B TODO (Remaining Work Reference)
+
+Phase 4A status:
+- All items in ini_phase4A_fix_candidates.txt are marked SOLVED.
+
+Remaining work comes from earlier Phase 3 reports. Use these files as the authoritative source lists:
+
+1) Inconsistent config readers (non-Startup and non-Phase4A items) (OfflineMessageModule V2 enforcement DONE)
+   - ini_phase3D_inconsistent_config_readers_sorted.txt
+   - ini_phase3D_inconsistent_config_readers.csv
+   - ini_phase3D_inconsistent_config_readers_opensim_ini_focus.txt (already handled for Startup keys)
+
+2) Unused or not-read keys (needs review for deprecation vs missing code)
+   - ini_phase3C_unused_config_keys_refined.txt
+   - ini_phase3C_unused_config_keys_refined.csv
+   - ini_phase3C_unused_config_keys_hinted.txt
+
+3) Hard-coded defaults and potential overrides
+   - ini_phase3B_hard_coded_defaults.txt
+   - ini_phase3B_hard_coded_defaults.csv
+   - ini_phase3B_hardcoded_overrides.csv
+
+Suggested next steps for Phase 4B:
+- Pick ONE key from section 1 (inconsistent readers) or section 2 (unused) or section 3 (hard-coded) and authorize a single-setting fix.
+- Use the corresponding report as the source of truth for the target key and reader locations.
+
+Notes:
+- Config load order changes and template canonicalization are already covered in Phase 4A.
+- The ConfigLoadHarness remains in Tools/ConfigLoadHarness for validation and can be removed later.
+
+
+1. OfflineMessageModule
+Modules: OfflineMessageModule.cs and OfflineIMRegionModule.cs
+
+2. OfflineMessageURL
+Modules: OfflineMessageModule.cs, OfflineIMRegionModule.cs, OfflineIMServiceRemoteConnector.cs
+
+3.LureModule
+Modules: LureModule.cs, HGLureModule.cs
+
+4. LandServices
+Modules: LocalLandServiceConnector.cs, RemoteLandServiceConnector.cs
+
+5. UserManagementModule
+Modules: HGUserManagementModule.cs, UserManagementModule.cs

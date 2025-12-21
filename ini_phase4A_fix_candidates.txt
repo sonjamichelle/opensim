@@ -1,0 +1,48 @@
+Phase 4A: Fix Candidate List (OpenSim.ini Unification)
+
+Prioritized candidates based on prior reports and config load behavior.
+
+1) Setting: inimaster (SOLVED)
+   Module(s): OpenSim/Region/Application/ConfigurationLoader.cs
+   Nature of violation: Missing/none allows bypass of canonical template; must be enforced to keep template authoritative.
+   Estimated fix complexity: Low
+
+2) Setting: inifile (SOLVED)
+   Module(s): OpenSim/Region/Application/ConfigurationLoader.cs
+   Nature of violation: Missing OpenSim.ini previously allowed fallback; must be explicit to keep master-derived ini authoritative.
+   Estimated fix complexity: Low
+
+3) Setting: ConfigDirectory (SOLVED)
+   Module(s): OpenSim/Framework/Util.cs; OpenSim/Server/Base/ServicesServerBase.cs; OpenSim/Region/Application/OpenSimBase.cs
+   Nature of violation: Multiple readers with differing defaults ("." vs String.Empty) cause inconsistent path resolution.
+   Estimated fix complexity: Medium
+
+4) Setting: RegistryLocation (SOLVED)
+   Module(s): OpenSim/Server/ServerMain.cs; OpenSim/Region/Application/OpenSimBase.cs
+   Nature of violation: Conflicting defaults ("." vs String.Empty) can switch plugin load path unexpectedly.
+   Estimated fix complexity: Medium
+
+5) Setting: regionload_regionsdir (SOLVED)
+   Module(s): OpenSim/Region/Application/OpenSim.cs; OpenSim/ApplicationPlugins/LoadRegions/RegionLoaderFileSystem.cs; OpenSim/ApplicationPlugins/RemoteController/RemoteAdminPlugin.cs
+   Nature of violation: Multiple readers with defaults can ignore intended directory when missing/blank.
+   Estimated fix complexity: Medium
+
+6) Setting: physics (SOLVED)
+   Module(s): OpenSim/Region/Application/ConfigurationLoader.cs; OpenSim/Region/PhysicsModules/BasicPhysics/BasicPhysicsScene.cs; OpenSim/Region/PhysicsModules/BulletS/BSScene.cs; OpenSim/Region/PhysicsModules/BulletS/ExtendedPhysics.cs; OpenSim/Region/PhysicsModules/POS/POSScene.cs; OpenSim/Region/PhysicsModules/ubOde/ODEModule.cs
+   Nature of violation: Multiple readers with empty-string defaults; can bypass canonical config selection.
+   Estimated fix complexity: Medium
+
+7) Setting: meshing (SOLVED)
+   Module(s): OpenSim/Region/Application/ConfigurationLoader.cs; OpenSim/Region/PhysicsModules/ubOde/ODEModule.cs; OpenSim/Region/PhysicsModules/ubOdeMeshing/Meshmerizer.cs; OpenSim/Region/PhysicsModules/Meshing/ZeroMesher.cs; OpenSim/Region/PhysicsModules/Meshing/Meshmerizer/Meshmerizer.cs
+   Nature of violation: Multiple readers with empty-string defaults; can bypass canonical config selection.
+   Estimated fix complexity: Medium
+
+8) Setting: TilesStoragePath (SOLVED)
+   Module(s): OpenSim/Services/MapImageService/MapImageService.cs; OpenSim/Region/CoreModules/World/WorldMap/WorldMapModule.cs; OpenSim/Region/CoreModules/World/Warp3DMap/Warp3DImageModule.cs
+   Nature of violation: Default "maptiles" used when unset; template lacks explicit key, path can be implicit or wrong.
+   Estimated fix complexity: Low
+
+9) Setting: MapTileDirectory (SOLVED)
+   Module(s): OpenSim/Services/GridService/HypergridLinker.cs
+   Nature of violation: Default "maptiles" used when unset; template lacks explicit key, path can be implicit or wrong.
+   Estimated fix complexity: Low

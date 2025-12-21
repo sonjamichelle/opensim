@@ -1,0 +1,1885 @@
+bin/OpenSimDefaults.ini
+[Startup]
+- ConsolePrompt
+- ConsoleHistoryFileEnabled
+- LogFile
+- ConsoleHistoryFile
+- ConsoleHistoryFileLines
+- ConsoleHistoryTimeStamp
+- save_crashes
+- crash_dir
+- PIDFile
+- startup_console_commands_file
+- shutdown_console_commands_file
+- timer_Script
+- timer_Interval
+- async_call_method
+- MaxPoolThreads
+- JobEngineEnabled
+- RegistryLocation
+- ConfigDirectory
+- clientstack_plugin
+- region_info_source
+- regionload_regionsdir
+- regionload_webserver_url
+- allow_regionless
+- see_into_region
+- LegacySitOffsets
+- MaxPrimUndos
+- NonPhysicalPrimMin
+- NonPhysicalPrimMax
+- PhysicalPrimMin
+- PhysicalPrimMax
+- ClampPrimSize
+- LinksetPrims
+- AllowScriptCrossing
+- TrustBinaries
+- DefaultDrawDistance
+- MaxDrawDistance
+- MaxRegionsViewDistance
+- MinRegionsViewDistance
+- InworldRestartShutsDown
+- Normalized55FPS
+- FrameTime
+- FrameTimeWarnPercent
+- FrameTimeCritPercent
+- UpdateObjectsEveryNFrames
+- UpdateAgentsEveryNFrames
+- UpdateEntityMovementEveryNFrames
+- UpdateCoarseLocationsEveryNFrames
+- UpdatePhysicsEveryNFrames
+- UpdateEventsEveryNFrames
+- UpdateTerrainEveryNFrames
+- UpdateStorageEveryNFrames
+- UpdateTempCleaningEveryNSeconds
+- MinimumTimeBeforePersistenceConsidered
+- MaximumTimeBeforePersistenceConsidered
+- collidable_prim
+- physical_prim
+- meshing
+- DecodedSculptMapPath
+- CacheSculptMaps
+- physics
+- DefaultScriptEngine
+- HttpProxy
+- HttpProxyExceptions
+- emailmodule
+- enableflyslow
+- LogShowStatsSeconds
+- Stats_URI
+- ManagedStatsRemoteFetchURI
+- StartDisabled
+- UseCSJ2K
+- UseTrashOnDelete
+- LogOverloads
+- SpawnPointRouting
+- TelehubAllowLandmark
+- EnableCertConverter
+- PemCertPublicKey
+- PemCertPrivateKey
+- outputCertName
+- outputCertPassword
+- EnableSelfsignedCertSupport
+- CertRenewOnStartup
+- CertFileName
+- CertPassword
+- CertHostName
+- CertHostIp
+- NoVerifyCertChain
+- NoVerifyCertHostname
+[Map]
+- GenerateMaptiles
+- WorldMapModule
+- MapImageModule
+- BlacklistTimeout
+- MaptileRefresh
+- MaptileStaticUUID
+- DrawPrimOnMapTile
+- TextureOnMapTile
+- TexturePrims
+- TexturePrimSize
+- RenderMeshes
+- RenderMaxHeight
+- RenderMinHeight
+- ShowNPCs
+[Permissions]
+- permissionmodules
+- serverside_object_permissions
+- allow_grid_gods
+- region_owner_is_god
+- region_manager_is_god
+- automatic_gods
+- implicit_gods
+- allowed_script_creators
+- allowed_script_editors
+- simple_build_permissions
+- LevelUpload
+[RegionReady]
+- enabled
+- channel_notify
+- login_disable
+- alert_uri
+[EstateManagement]
+- AllowRegionRestartFromClient
+- IgnoreEstateMinorAccessControl
+- IgnoreEstatePaymentAccessControl
+[UserProfiles]
+- ProfileURL
+- AllowUserProfileWebURLs
+[SMTP]
+- enabled
+- internal_object_host
+- host_domain_header_from
+- SMTP_SERVER_FROM
+- SMTP_SERVER_HOSTNAME
+- SMTP_SERVER_PORT
+- SMTP_SERVER_TLS
+- SMTP_SERVER_LOGIN
+- SMTP_SERVER_PASSWORD
+- SMTP_VerifyCertChain
+- SMTP_VerifyCertNames
+[Network]
+- ConsoleUser
+- ConsolePass
+- http_listener_port
+- console_port
+- http_listener_ssl
+- http_listener_sslport
+- http_listener_cn
+- http_listener_cert_path
+- http_listener_cert_pass
+- https_listener
+- https_port
+- cert_path
+- cert_pass
+- HttpBodyMaxLenMAX
+- ExternalHostNameForLSL
+- OutboundDisallowForUserScripts
+- shard
+- user_agent
+- MaxRequestConcurrency
+[ScriptsHttpRequestModule]
+- MaxPoolThreads
+- PrimRequestsPerSec
+- PrimRequestsBurst
+- PrimOwnerRequestsPerSec
+- PrimOwnerRequestsBurst
+- RequestsTimeOut
+[AccessControl]
+- AllowedClients
+- DeniedClients
+[ClientStack.LindenUDP]
+- scene_throttle_max_bps
+- client_throttle_max_bps
+- adaptive_throttle_min_bps
+- enable_adaptive_throttles
+- TextureSendLimit
+- DisableFacelights
+- AckTimeout
+- PausedAckTimeout
+- SupportViewerObjectsCache
+[ClientStack.LindenCaps]
+- Cap_AttachmentResources
+- Cap_ChatSessionRequest
+- Cap_CopyInventoryFromNotecard
+- Cap_DispatchRegionInfo
+- Cap_EstateAccess
+- Cap_EstateChangeInfo
+- Cap_EnvironmentSettings
+- Cap_EventQueueGet
+- Cap_FetchInventory
+- Cap_ObjectMedia
+- Cap_ObjectMediaNavigate
+- Cap_FetchLib
+- Cap_FetchLibDescendents
+- Cap_GetDisplayNames
+- Cap_GetTexture
+- Cap_GetMesh
+- Cap_GetMesh2
+- Cap_GetAsset
+- Cap_GetObjectCost
+- Cap_GetObjectPhysicsData
+- Cap_GroupProposalBallot
+- Cap_GroupMemberData
+- Cap_HomeLocation
+- Cap_LandResources
+- Cap_MapLayer
+- Cap_MapLayerGod
+- Cap_NewFileAgentInventory
+- Cap_NewFileAgentInventoryVariablePrice
+- Cap_ObjectAdd
+- Cap_ParcelPropertiesUpdate
+- Cap_ParcelMediaURLFilterList
+- Cap_ParcelNavigateMedia
+- Cap_ParcelVoiceInfoRequest
+- Cap_ProductInfoRequest
+- Cap_ProvisionVoiceAccountRequest
+- Cap_RemoteParcelRequest
+- Cap_RequestTextureDownload
+- Cap_SearchStatRequest
+- Cap_SearchStatTracking
+- Cap_SendPostcard
+- Cap_SendUserReport
+- Cap_SendUserReportWithScreenshot
+- Cap_ServerReleaseNotes
+- Cap_SimConsole
+- Cap_SimulatorFeatures
+- Cap_SetDisplayName
+- Cap_StartGroupProposal
+- Cap_TextureStats
+- Cap_UntrustedSimulatorMessage
+- Cap_UpdateAgentInformation
+- Cap_UpdateAgentLanguage
+- Cap_UpdateGestureAgentInventory
+- Cap_UpdateNotecardAgentInventory
+- Cap_UpdateScriptAgent
+- Cap_UpdateGestureTaskInventory
+- Cap_UpdateNotecardTaskInventory
+- Cap_UpdateScriptTask
+- Cap_UploadBakedTexture
+- Cap_UploadObjectAsset
+- Cap_ViewerStartAuction
+- Cap_ViewerStats
+- Cap_WebFetchInventoryDescendents
+- Cap_FetchInventoryDescendents2
+- Cap_FetchInventory2
+- Cap_FetchLib2
+- Cap_FetchLibDescendents2
+- Cap_AvatarPickerSearch
+[Chat]
+- enabled
+- whisper_distance
+- say_distance
+- shout_distance
+[EntityTransfer]
+- AllowAvatarCrossing
+- DisableObjectTransfer
+- LevelHGTeleport
+- DisableInterRegionTeleportCancellation
+- LandingPointBehavior
+[Messaging]
+- InstantMessageModule
+- MessageTransferModule
+- OfflineMessageModule
+- OfflineMessageURL
+- MuteListModule
+- MuteListURL
+- ForwardOfflineGroupMessages
+[Inventory]
+- CoalesceMultipleObjectsToInventory
+[Appearance]
+- PersistBakedTextures
+- DelayBeforeAppearanceSave
+- DelayBeforeAppearanceSend
+- ResendAppearanceUpdates
+- ReuseTextures
+[Attachments]
+- Enabled
+- WearReplacesAll
+[Mesh]
+- AllowMeshUpload
+- LevelUpload
+- UseMeshiesPhysicsMesh
+- ConvexPrims
+- ConvexSculpts
+- MeshFileCache
+- MeshFileCachePath
+- MeshFileCacheDoExpire
+- MeshFileCacheExpireHours
+[Textures]
+- ReuseDynamicTextures
+- ReuseDynamicLowDataTextures
+[ODEPhysicsSettings]
+- collect_stats
+- physics_logging
+- physics_logging_interval
+- physics_logging_append_existing_logfile
+- world_gravityx
+- world_gravityy
+- world_gravityz
+- avatar_terminal_velocity
+- world_stepsize
+- world_solver_iterations
+- filter_collisions
+- nm_terraincontact_friction
+- nm_terraincontact_bounce
+- nm_terraincontact_erp
+- m_terraincontact_friction
+- m_terraincontact_bounce
+- m_terrainContact_erp
+- m_avatarobjectcontact_friction
+- m_avatarobjectcontact_bounce
+- objectcontact_friction
+- objectcontact_bounce
+- av_density
+- av_height_fudge_factor
+- av_movement_divisor_walk
+- av_movement_divisor_run
+- geometry_default_density
+- body_frames_auto_disable
+- geom_updates_before_throttled_update
+- maximum_mass_object
+- mesh_sculpted_prim
+- mesh_lod
+- mesh_physical_lod
+- MinSizeToMeshmerize
+[BulletSim]
+- BulletEngine
+- UseSeparatePhysicsThread
+- TerrainImplementation
+- TerrainMeshMagnification
+- AvatarToAvatarCollisionsByDefault
+- AvatarHeightLowFudge
+- AvatarHeightMidFudge
+- AvatarHeightHighFudge
+- AvatarStepHeight
+- AvatarStepAngle
+- AvatarStepApproachFactor
+- AvatarStepGroundFudge
+- AvatarStepForceFactor
+- AvatarStepUpCorrectionFactor
+- AvatarStepSmoothingSteps
+- AvatarTerminalVelocity
+- LinkImplementation
+- LinksetOffsetCenterOfMass
+- MeshSculptedPrim
+- ForceSimplePrimMeshing
+- ShouldRemoveZeroWidthTriangles
+- ShouldUseAssetHulls
+- MaxCollisionsPerFrame
+- MaxUpdatesPerFrame
+- PhysicsLoggingEnabled
+- PhysicsLoggingDir
+- VehicleLoggingEnabled
+[RemoteAdmin]
+- enabled
+- port
+- bind_ip_address
+- access_password
+- access_ip_addresses
+- create_region_enable_voice
+- create_region_public
+- region_file_template
+- region_limit
+- enabled_methods
+- default_male
+- default_female
+- copy_folders
+- default_appearance
+- god_key
+- prefix
+- authenticate
+- secured
+- extended-escape
+- realm
+- dump-asset
+- path-fill
+- dump-line-size
+- flush-on-error
+[IRC]
+- enabled
+- server
+- password
+- nick
+- channel
+- user
+- port
+- commands_enabled
+- command_channel
+- report_clients
+- relay_private_channels
+- relay_private_channel_in
+- relay_private_channel_out
+- relay_chat
+- access_password
+- msgformat
+- exclude_list
+- alert_show
+- alert_show_serverinfo
+- alert_msg_pre
+- alert_msg_post
+[Wind]
+- enabled
+- wind_update_rate
+- wind_plugin
+- avg_strength
+- avg_direction
+- var_strength
+- var_direction
+- rate_change
+- strength
+[Trees]
+- enabled
+- active_trees
+- update_rate
+- allowGrow
+[VectorRender]
+- font_name
+[LL-Functions]
+- AllowosConsoleCommand
+- AllowGodFunctions
+- RestrictEmail
+- max_listens_per_region
+- max_listens_per_script
+- max_external_urls_per_simulator
+- UseSimpleBoxesInGetBoundingBox
+- AddStatsInGetBoundingBox
+- LowerAvatarBoundingBoxStandingXconst
+- UpperAvatarBoundingBoxStandingXconst
+- LowerAvatarBoundingBoxStandingYconst
+- UpperAvatarBoundingBoxStandingYconst
+- LowerAvatarBoundingBoxStandingZconst
+- LowerAvatarBoundingBoxStandingZcoeff
+- UpperAvatarBoundingBoxStandingZconst
+- UpperAvatarBoundingBoxStandingZcoeff
+- LowerAvatarBoundingBoxGroundsittingXconst
+- UpperAvatarBoundingBoxGroundsittingXconst
+- LowerAvatarBoundingBoxGroundsittingYconst
+- UpperAvatarBoundingBoxGroundsittingYconst
+- LowerAvatarBoundingBoxGroundsittingZconst
+- LowerAvatarBoundingBoxGroundsittingZcoeff
+- UpperAvatarBoundingBoxGroundsittingZconst
+- UpperAvatarBoundingBoxGroundsittingZcoeff
+- LowerAvatarBoundingBoxSittingXconst
+- UpperAvatarBoundingBoxSittingXconst
+- LowerAvatarBoundingBoxSittingYconst
+- UpperAvatarBoundingBoxSittingYconst
+- LowerAvatarBoundingBoxSittingZconst
+- LowerAvatarBoundingBoxSittingZcoeff
+- UpperAvatarBoundingBoxSittingZconst
+- UpperAvatarBoundingBoxSittingZcoeff
+- PrimBoundingBoxSafetyCoefficientX
+- PrimBoundingBoxSafetyCoefficientY
+- PrimBoundingBoxSafetyCoefficientZ
+- UseLlCastRayV3
+- FloatToleranceInLlCastRay
+- FloatTolerance2InLlCastRay
+- PrimDetailLevelInLlCastRay
+- SculptDetailLevelInLlCastRay
+- MeshDetailLevelInLlCastRay
+- AvatarDetailLevelInLlCastRay
+- MaxHitsInLlCastRay
+- MaxHitsPerPrimInLlCastRay
+- MaxHitsPerObjectInLlCastRay
+- DetectExitHitsInLlCastRay
+- DoAttachmentsInLlCastRay
+- ThrottleTimeInMsInLlCastRay
+- AvailableTimeInMsPerRegionInLlCastRay
+- AvailableTimeInMsPerAvatarInLlCastRay
+- RequiredAvailableTimeInMsInLlCastRay
+- MaximumAvailableTimeInMsInLlCastRay
+- UseMeshCacheInLlCastRay
+[DataSnapshot]
+- index_sims
+- data_exposure
+- gridname
+- default_snapshot_period
+- snapshot_cache_directory
+- DATA_SRV_MISearch
+[Economy]
+- economymodule
+- SellEnabled
+- PriceUpload
+- PriceGroupCreate
+- ObjectCount
+- PriceEnergyUnit
+- PriceObjectClaim
+- PricePublicObjectDecay
+- PricePublicObjectDelete
+- PriceParcelClaim
+- PriceParcelClaimFactor
+- PriceRentLight
+- TeleportMinPrice
+- TeleportPriceExponent
+- EnergyEfficiency
+- PriceObjectRent
+- PriceObjectScaleFactor
+- PriceParcelRent
+- MeshModelAllowTextureToInventory
+[YEngine]
+- Enabled
+- ScriptStackSize
+- ScriptHeapSize
+- NumThreadScriptWorkers
+- Priority
+- UseSourceHashCode
+- MaintenanceInterval
+- AsyncLLCommandLoopms
+- ScriptDelayFactor
+- ScriptDistanceLimitFactor
+- NotecardLineReadCharsMax
+- MinTimerInterval
+- SensorMaxRange
+- SensorMaxResults
+- AutomaticLinkPermission
+- DisableUndergroundMovement
+- ScriptEnginesPath
+[Concierge]
+- enabled
+- whoami
+- password
+- regions
+- welcomes
+- broker
+[Hypergrid]
+- safemode
+[VivoxVoice]
+- enabled
+- vivox_server
+- vivox_sip_uri
+- vivox_admin_user
+- vivox_admin_password
+- vivox_channel_type
+- vivox_channel_distance_model
+- vivox_channel_mode
+- vivox_channel_roll_off
+- vivox_channel_max_range
+- vivox_channel_clamping_distance
+[Groups]
+- Enabled
+- Module
+- NoticesEnabled
+- DebugEnabled
+- DebugMessagingEnabled
+- GroupsCacheTimeout
+- MessagingModule
+- MessagingEnabled
+- MessageOnlineUsersOnly
+- ServicesConnectorModule
+- GroupsServerURI
+- XmlRpcServiceReadKey
+- XmlRpcServiceWriteKey
+- XmlRpcDisableKeepAlive
+- LevelGroupCreate
+[PacketPool]
+- RecyclePackets
+- RecycleDataBlocks
+- RecycleBaseUDPPackets
+[InterestManagement]
+- UpdatePrioritizationScheme
+- ReprioritizationEnabled
+- ReprioritizationInterval
+- RootReprioritizationDistance
+- ChildReprioritizationDistance
+- ObjectsCullingByDistance
+- RootTerseUpdatePeriod
+- ChildTerseUpdatePeriod
+- RootPositionUpdateTolerance
+- RootRotationUpdateTolerance
+- RootVelocityUpdateTolerance
+[Monitoring]
+- Enabled
+- ServerStatsEnabled
+[WebStats]
+- enabled
+[Statistics]
+- NumberOfFrames
+[MediaOnAPrim]
+- Enabled
+[NPC]
+- AllowNotOwned
+- AllowSenseAsAvatar
+- AllowCloneOtherAvatars
+- NoNPCGroup
+[Terrain]
+- InitialTerrain
+- SendTerrainUpdatesByViewDistance
+[LandManagement]
+- LimitParcelLayerUpdateDistance
+- ParcelLayerViewDistance
+- ShowParcelBansLines
+- BanLineSafeHeight
+- DefaultAdministratorParcelName
+- DefaultAdministratorGroupUUID
+- DefaultAdministratorOwnerUUID
+[JsonStore]
+- Enabled
+- EnableObjectStore
+- MaxStringSpace
+[AssetService]
+- DefaultAssetLoader
+- AssetLoaderArgs
+- AssetLoaderEnabled
+[GridService]
+- StorageProvider
+[AutoBackupModule]
+- AutoBackupModuleEnabled
+[Sounds]
+- Module
+- MaxDistance
+[ServiceThrottle]
+- Interval
+[Dwell]
+- DwellModule
+[ServerReleaseNotes]
+- ServerReleaseNotesURL
+[Modules]
+- Include-modules
+
+bin/OpenSim.ini
+[Const]
+- BaseHostname
+- BaseURL
+- PrivatePort
+- PrivURL
+- PublicPort
+[Startup]
+- ConsolePrompt
+- ConsoleHistoryFileEnabled
+- LogFile
+- ConsoleHistoryFile
+- ConsoleHistoryFileLines
+- ConsoleHistoryTimeStamp
+- save_crashes
+- crash_dir
+- PIDFile
+- startup_console_commands_file
+- shutdown_console_commands_file
+- timer_Script
+- timer_Interval
+- async_call_method
+- MaxPoolThreads
+- JobEngineEnabled
+- RegistryLocation
+- ConfigDirectory
+- clientstack_plugin
+- region_info_source
+- regionload_regionsdir
+- regionload_webserver_url
+- allow_regionless
+- see_into_region
+- LegacySitOffsets
+- MaxPrimUndos
+- NonPhysicalPrimMin
+- NonPhysicalPrimMax
+- PhysicalPrimMin
+- PhysicalPrimMax
+- ClampPrimSize
+- LinksetPrims
+- AllowScriptCrossing
+- TrustBinaries
+- DefaultDrawDistance
+- MaxDrawDistance
+- MaxRegionsViewDistance
+- MinRegionsViewDistance
+- InworldRestartShutsDown
+- Normalized55FPS
+- FrameTime
+- FrameTimeWarnPercent
+- FrameTimeCritPercent
+- UpdateObjectsEveryNFrames
+- UpdateAgentsEveryNFrames
+- UpdateEntityMovementEveryNFrames
+- UpdateCoarseLocationsEveryNFrames
+- UpdatePhysicsEveryNFrames
+- UpdateEventsEveryNFrames
+- UpdateTerrainEveryNFrames
+- UpdateStorageEveryNFrames
+- UpdateTempCleaningEveryNSeconds
+- MinimumTimeBeforePersistenceConsidered
+- MaximumTimeBeforePersistenceConsidered
+- collidable_prim
+- physical_prim
+- meshing
+- DecodedSculptMapPath
+- CacheSculptMaps
+- physics
+- DefaultScriptEngine
+- HttpProxy
+- HttpProxyExceptions
+- emailmodule
+- enableflyslow
+- LogShowStatsSeconds
+- Stats_URI
+- ManagedStatsRemoteFetchURI
+- StartDisabled
+- UseCSJ2K
+- UseTrashOnDelete
+- LogOverloads
+- SpawnPointRouting
+- TelehubAllowLandmark
+- EnableCertConverter
+- PemCertPublicKey
+- PemCertPrivateKey
+- outputCertName
+- outputCertPassword
+- EnableSelfsignedCertSupport
+- CertRenewOnStartup
+- CertFileName
+- CertPassword
+- CertHostName
+- CertHostIp
+- NoVerifyCertChain
+- NoVerifyCertHostname
+- economymodule
+[Map]
+- GenerateMaptiles
+- WorldMapModule
+- MapImageModule
+- BlacklistTimeout
+- MaptileRefresh
+- MaptileStaticUUID
+- DrawPrimOnMapTile
+- TextureOnMapTile
+- TexturePrims
+- TexturePrimSize
+- RenderMeshes
+- RenderMaxHeight
+- RenderMinHeight
+- ShowNPCs
+- MapColorWater
+- MaptileDirectory
+- MaptileMaxObjectHeight
+- MaptileMinObjectHeight
+- TilesStoragePath
+[Permissions]
+- permissionmodules
+- serverside_object_permissions
+- allow_grid_gods
+- region_owner_is_god
+- region_manager_is_god
+- automatic_gods
+- implicit_gods
+- allowed_script_creators
+- allowed_script_editors
+- simple_build_permissions
+- LevelUpload
+[RegionReady]
+- enabled
+- channel_notify
+- login_disable
+- alert_uri
+[EstateManagement]
+- AllowRegionRestartFromClient
+- IgnoreEstateMinorAccessControl
+- IgnoreEstatePaymentAccessControl
+[UserProfiles]
+- ProfileURL
+- AllowUserProfileWebURLs
+- ProfileServiceURL
+[SMTP]
+- enabled
+- internal_object_host
+- host_domain_header_from
+- SMTP_SERVER_FROM
+- SMTP_SERVER_HOSTNAME
+- SMTP_SERVER_PORT
+- SMTP_SERVER_TLS
+- SMTP_SERVER_LOGIN
+- SMTP_SERVER_PASSWORD
+- SMTP_VerifyCertChain
+- SMTP_VerifyCertNames
+[Network]
+- ConsoleUser
+- ConsolePass
+- http_listener_port
+- console_port
+- http_listener_ssl
+- http_listener_sslport
+- http_listener_cn
+- http_listener_cert_path
+- http_listener_cert_pass
+- https_listener
+- https_port
+- cert_path
+- cert_pass
+- HttpBodyMaxLenMAX
+- ExternalHostNameForLSL
+- OutboundDisallowForUserScripts
+- shard
+- user_agent
+- MaxRequestConcurrency
+[ScriptsHttpRequestModule]
+- MaxPoolThreads
+- PrimRequestsPerSec
+- PrimRequestsBurst
+- PrimOwnerRequestsPerSec
+- PrimOwnerRequestsBurst
+- RequestsTimeOut
+[AccessControl]
+- AllowedClients
+- DeniedClients
+[ClientStack.LindenUDP]
+- scene_throttle_max_bps
+- client_throttle_max_bps
+- adaptive_throttle_min_bps
+- enable_adaptive_throttles
+- TextureSendLimit
+- DisableFacelights
+- AckTimeout
+- PausedAckTimeout
+- SupportViewerObjectsCache
+[ClientStack.LindenCaps]
+- Cap_AttachmentResources
+- Cap_ChatSessionRequest
+- Cap_CopyInventoryFromNotecard
+- Cap_DispatchRegionInfo
+- Cap_EstateAccess
+- Cap_EstateChangeInfo
+- Cap_EnvironmentSettings
+- Cap_EventQueueGet
+- Cap_FetchInventory
+- Cap_ObjectMedia
+- Cap_ObjectMediaNavigate
+- Cap_FetchLib
+- Cap_FetchLibDescendents
+- Cap_GetDisplayNames
+- Cap_GetTexture
+- Cap_GetMesh
+- Cap_GetMesh2
+- Cap_GetAsset
+- Cap_GetObjectCost
+- Cap_GetObjectPhysicsData
+- Cap_GroupProposalBallot
+- Cap_GroupMemberData
+- Cap_HomeLocation
+- Cap_LandResources
+- Cap_MapLayer
+- Cap_MapLayerGod
+- Cap_NewFileAgentInventory
+- Cap_NewFileAgentInventoryVariablePrice
+- Cap_ObjectAdd
+- Cap_ParcelPropertiesUpdate
+- Cap_ParcelMediaURLFilterList
+- Cap_ParcelNavigateMedia
+- Cap_ParcelVoiceInfoRequest
+- Cap_ProductInfoRequest
+- Cap_ProvisionVoiceAccountRequest
+- Cap_RemoteParcelRequest
+- Cap_RequestTextureDownload
+- Cap_SearchStatRequest
+- Cap_SearchStatTracking
+- Cap_SendPostcard
+- Cap_SendUserReport
+- Cap_SendUserReportWithScreenshot
+- Cap_ServerReleaseNotes
+- Cap_SimConsole
+- Cap_SimulatorFeatures
+- Cap_SetDisplayName
+- Cap_StartGroupProposal
+- Cap_TextureStats
+- Cap_UntrustedSimulatorMessage
+- Cap_UpdateAgentInformation
+- Cap_UpdateAgentLanguage
+- Cap_UpdateGestureAgentInventory
+- Cap_UpdateNotecardAgentInventory
+- Cap_UpdateScriptAgent
+- Cap_UpdateGestureTaskInventory
+- Cap_UpdateNotecardTaskInventory
+- Cap_UpdateScriptTask
+- Cap_UploadBakedTexture
+- Cap_UploadObjectAsset
+- Cap_ViewerStartAuction
+- Cap_ViewerStats
+- Cap_WebFetchInventoryDescendents
+- Cap_FetchInventoryDescendents2
+- Cap_FetchInventory2
+- Cap_FetchLib2
+- Cap_FetchLibDescendents2
+- Cap_AvatarPickerSearch
+[Chat]
+- enabled
+- whisper_distance
+- say_distance
+- shout_distance
+[EntityTransfer]
+- AllowAvatarCrossing
+- DisableObjectTransfer
+- LevelHGTeleport
+- DisableInterRegionTeleportCancellation
+- LandingPointBehavior
+[Messaging]
+- InstantMessageModule
+- MessageTransferModule
+- OfflineMessageModule
+- OfflineMessageURL
+- MuteListModule
+- MuteListURL
+- ForwardOfflineGroupMessages
+- StorageProvider
+[Inventory]
+- CoalesceMultipleObjectsToInventory
+[Appearance]
+- PersistBakedTextures
+- DelayBeforeAppearanceSave
+- DelayBeforeAppearanceSend
+- ResendAppearanceUpdates
+- ReuseTextures
+[Attachments]
+- Enabled
+- WearReplacesAll
+[Mesh]
+- AllowMeshUpload
+- LevelUpload
+- UseMeshiesPhysicsMesh
+- ConvexPrims
+- ConvexSculpts
+- MeshFileCache
+- MeshFileCachePath
+- MeshFileCacheDoExpire
+- MeshFileCacheExpireHours
+[Textures]
+- ReuseDynamicTextures
+- ReuseDynamicLowDataTextures
+[ODEPhysicsSettings]
+- collect_stats
+- physics_logging
+- physics_logging_interval
+- physics_logging_append_existing_logfile
+- world_gravityx
+- world_gravityy
+- world_gravityz
+- avatar_terminal_velocity
+- world_stepsize
+- world_solver_iterations
+- filter_collisions
+- nm_terraincontact_friction
+- nm_terraincontact_bounce
+- nm_terraincontact_erp
+- m_terraincontact_friction
+- m_terraincontact_bounce
+- m_terrainContact_erp
+- m_avatarobjectcontact_friction
+- m_avatarobjectcontact_bounce
+- objectcontact_friction
+- objectcontact_bounce
+- av_density
+- av_height_fudge_factor
+- av_movement_divisor_walk
+- av_movement_divisor_run
+- geometry_default_density
+- body_frames_auto_disable
+- geom_updates_before_throttled_update
+- maximum_mass_object
+- mesh_sculpted_prim
+- mesh_lod
+- mesh_physical_lod
+- MinSizeToMeshmerize
+[BulletSim]
+- BulletEngine
+- UseSeparatePhysicsThread
+- TerrainImplementation
+- TerrainMeshMagnification
+- AvatarToAvatarCollisionsByDefault
+- AvatarHeightLowFudge
+- AvatarHeightMidFudge
+- AvatarHeightHighFudge
+- AvatarStepHeight
+- AvatarStepAngle
+- AvatarStepApproachFactor
+- AvatarStepGroundFudge
+- AvatarStepForceFactor
+- AvatarStepUpCorrectionFactor
+- AvatarStepSmoothingSteps
+- AvatarTerminalVelocity
+- LinkImplementation
+- LinksetOffsetCenterOfMass
+- MeshSculptedPrim
+- ForceSimplePrimMeshing
+- ShouldRemoveZeroWidthTriangles
+- ShouldUseAssetHulls
+- MaxCollisionsPerFrame
+- MaxUpdatesPerFrame
+- PhysicsLoggingEnabled
+- PhysicsLoggingDir
+- VehicleLoggingEnabled
+[RemoteAdmin]
+- enabled
+- port
+- bind_ip_address
+- access_password
+- access_ip_addresses
+- create_region_enable_voice
+- create_region_public
+- region_file_template
+- region_limit
+- enabled_methods
+- default_male
+- default_female
+- copy_folders
+- default_appearance
+- god_key
+- prefix
+- authenticate
+- secured
+- extended-escape
+- realm
+- dump-asset
+- path-fill
+- dump-line-size
+- flush-on-error
+[IRC]
+- enabled
+- server
+- password
+- nick
+- channel
+- user
+- port
+- commands_enabled
+- command_channel
+- report_clients
+- relay_private_channels
+- relay_private_channel_in
+- relay_private_channel_out
+- relay_chat
+- access_password
+- msgformat
+- exclude_list
+- alert_show
+- alert_show_serverinfo
+- alert_msg_pre
+- alert_msg_post
+[Wind]
+- enabled
+- wind_update_rate
+- wind_plugin
+- avg_strength
+- avg_direction
+- var_strength
+- var_direction
+- rate_change
+- strength
+[Trees]
+- enabled
+- active_trees
+- update_rate
+- allowGrow
+[VectorRender]
+- font_name
+[LL-Functions]
+- AllowosConsoleCommand
+- AllowGodFunctions
+- RestrictEmail
+- max_listens_per_region
+- max_listens_per_script
+- max_external_urls_per_simulator
+- UseSimpleBoxesInGetBoundingBox
+- AddStatsInGetBoundingBox
+- LowerAvatarBoundingBoxStandingXconst
+- UpperAvatarBoundingBoxStandingXconst
+- LowerAvatarBoundingBoxStandingYconst
+- UpperAvatarBoundingBoxStandingYconst
+- LowerAvatarBoundingBoxStandingZconst
+- LowerAvatarBoundingBoxStandingZcoeff
+- UpperAvatarBoundingBoxStandingZconst
+- UpperAvatarBoundingBoxStandingZcoeff
+- LowerAvatarBoundingBoxGroundsittingXconst
+- UpperAvatarBoundingBoxGroundsittingXconst
+- LowerAvatarBoundingBoxGroundsittingYconst
+- UpperAvatarBoundingBoxGroundsittingYconst
+- LowerAvatarBoundingBoxGroundsittingZconst
+- LowerAvatarBoundingBoxGroundsittingZcoeff
+- UpperAvatarBoundingBoxGroundsittingZconst
+- UpperAvatarBoundingBoxGroundsittingZcoeff
+- LowerAvatarBoundingBoxSittingXconst
+- UpperAvatarBoundingBoxSittingXconst
+- LowerAvatarBoundingBoxSittingYconst
+- UpperAvatarBoundingBoxSittingYconst
+- LowerAvatarBoundingBoxSittingZconst
+- LowerAvatarBoundingBoxSittingZcoeff
+- UpperAvatarBoundingBoxSittingZconst
+- UpperAvatarBoundingBoxSittingZcoeff
+- PrimBoundingBoxSafetyCoefficientX
+- PrimBoundingBoxSafetyCoefficientY
+- PrimBoundingBoxSafetyCoefficientZ
+- UseLlCastRayV3
+- FloatToleranceInLlCastRay
+- FloatTolerance2InLlCastRay
+- PrimDetailLevelInLlCastRay
+- SculptDetailLevelInLlCastRay
+- MeshDetailLevelInLlCastRay
+- AvatarDetailLevelInLlCastRay
+- MaxHitsInLlCastRay
+- MaxHitsPerPrimInLlCastRay
+- MaxHitsPerObjectInLlCastRay
+- DetectExitHitsInLlCastRay
+- DoAttachmentsInLlCastRay
+- ThrottleTimeInMsInLlCastRay
+- AvailableTimeInMsPerRegionInLlCastRay
+- AvailableTimeInMsPerAvatarInLlCastRay
+- RequiredAvailableTimeInMsInLlCastRay
+- MaximumAvailableTimeInMsInLlCastRay
+- UseMeshCacheInLlCastRay
+[DataSnapshot]
+- index_sims
+- data_exposure
+- gridname
+- default_snapshot_period
+- snapshot_cache_directory
+- DATA_SRV_MISearch
+- economy
+- economymodule
+[Economy]
+- economymodule
+- SellEnabled
+- PriceUpload
+- PriceGroupCreate
+- ObjectCount
+- PriceEnergyUnit
+- PriceObjectClaim
+- PricePublicObjectDecay
+- PricePublicObjectDelete
+- PriceParcelClaim
+- PriceParcelClaimFactor
+- PriceRentLight
+- TeleportMinPrice
+- TeleportPriceExponent
+- EnergyEfficiency
+- PriceObjectRent
+- PriceObjectScaleFactor
+- PriceParcelRent
+- MeshModelAllowTextureToInventory
+[YEngine]
+- Enabled
+- ScriptStackSize
+- ScriptHeapSize
+- NumThreadScriptWorkers
+- Priority
+- UseSourceHashCode
+- MaintenanceInterval
+- AsyncLLCommandLoopms
+- ScriptDelayFactor
+- ScriptDistanceLimitFactor
+- NotecardLineReadCharsMax
+- MinTimerInterval
+- SensorMaxRange
+- SensorMaxResults
+- AutomaticLinkPermission
+- DisableUndergroundMovement
+- ScriptEnginesPath
+- ScriptDebug
+- ScriptDebugSaveIL
+- ScriptDebugSaveSource
+- scripts_enabled
+- TraceCalls
+- Verbose
+[Concierge]
+- enabled
+- whoami
+- password
+- regions
+- welcomes
+- broker
+[Hypergrid]
+- safemode
+[VivoxVoice]
+- enabled
+- vivox_server
+- vivox_sip_uri
+- vivox_admin_user
+- vivox_admin_password
+- vivox_channel_type
+- vivox_channel_distance_model
+- vivox_channel_mode
+- vivox_channel_roll_off
+- vivox_channel_max_range
+- vivox_channel_clamping_distance
+[Groups]
+- Enabled
+- Module
+- NoticesEnabled
+- DebugEnabled
+- DebugMessagingEnabled
+- GroupsCacheTimeout
+- MessagingModule
+- MessagingEnabled
+- MessageOnlineUsersOnly
+- ServicesConnectorModule
+- GroupsServerURI
+- XmlRpcServiceReadKey
+- XmlRpcServiceWriteKey
+- XmlRpcDisableKeepAlive
+- LevelGroupCreate
+- HomeURI
+- LocalService
+- SecretKey
+- StorageProvider
+[PacketPool]
+- RecyclePackets
+- RecycleDataBlocks
+- RecycleBaseUDPPackets
+[InterestManagement]
+- UpdatePrioritizationScheme
+- ReprioritizationEnabled
+- ReprioritizationInterval
+- RootReprioritizationDistance
+- ChildReprioritizationDistance
+- ObjectsCullingByDistance
+- RootTerseUpdatePeriod
+- ChildTerseUpdatePeriod
+- RootPositionUpdateTolerance
+- RootRotationUpdateTolerance
+- RootVelocityUpdateTolerance
+[Monitoring]
+- Enabled
+- ServerStatsEnabled
+[WebStats]
+- enabled
+[Statistics]
+- NumberOfFrames
+[MediaOnAPrim]
+- Enabled
+[NPC]
+- AllowNotOwned
+- AllowSenseAsAvatar
+- AllowCloneOtherAvatars
+- NoNPCGroup
+- AllowNPCCrossRegion
+- AllowNPCGroupMembership
+- AllowNPCTeleport
+- Enabled
+- MaxNumberNPCsPerScene
+- NPCOptionsMask
+- NPCUpdateRate
+[Terrain]
+- InitialTerrain
+- SendTerrainUpdatesByViewDistance
+[LandManagement]
+- LimitParcelLayerUpdateDistance
+- ParcelLayerViewDistance
+- ShowParcelBansLines
+- BanLineSafeHeight
+- DefaultAdministratorParcelName
+- DefaultAdministratorGroupUUID
+- DefaultAdministratorOwnerUUID
+[JsonStore]
+- Enabled
+- EnableObjectStore
+- MaxStringSpace
+- ReadWriteTimeout
+[AssetService]
+- DefaultAssetLoader
+- AssetLoaderArgs
+- AssetLoaderEnabled
+[GridService]
+- StorageProvider
+[AutoBackupModule]
+- AutoBackupModuleEnabled
+[Sounds]
+- Module
+- MaxDistance
+[ServiceThrottle]
+- Interval
+[Dwell]
+- DwellModule
+[ServerReleaseNotes]
+- ServerReleaseNotesURL
+[Modules]
+- Include-modules
+[Architecture]
+- Include-Architecture
+[OSSL]
+- Include-osslDefaultEnable
+[Anaximander]
+- AnaximanderPath
+- DatabaseConnection
+- Enabled
+- GPUAccelerated
+- LogLevel
+- OutputDirectory
+- RenderThreads
+- TileSize
+[AutoBackup]
+- AutoBackupBusyCheck
+- AutoBackupDir
+- AutoBackupDirCleanup
+- AutoBackupInterval
+- AutoBackupKeepFilesForDays
+- AutoBackupModuleEnabled
+- AutoBackupNaming
+- AutoBackupSkipAssets
+- Enabled
+[Console]
+- Console
+[Estates]
+- (no keys found)
+[ExternalMapRenderer]
+- AutoGenerate
+- ConfigPath
+- Enabled
+- RendererPath
+- RenderInterval
+- RenderOnStartup
+[FreeSwitchVoice]
+- (no keys found)
+[Gloebit]
+- Enabled
+- GLBEnvironment
+- GLBKey
+- GLBOwnerEmail
+- GLBOwnerName
+- GLBSecret
+- GLBShowNewSessionAuthIM
+- GLBShowNewSessionPurchaseIM
+- GLBShowWelcomeMessage
+- GLBSpecificConnectionString
+- GLBSpecificStorageProvider
+[Materials]
+- enable_materials
+- MaxMaterialsPerTransaction
+[SimulatorFeatures]
+- (no keys found)
+[WorldView]
+- ConfigName
+- Enabled
+[XBakes]
+- URL
+
+bin/OpenSim.ini.template
+[CONST]
+- BaseHostname
+- BaseURL
+- PublicPort
+- PrivURL
+- PrivatePort
+[Startup]
+- ConsolePrompt
+- ConsoleHistoryFileEnabled
+- LogFile
+- ConsoleHistoryFile
+- ConsoleHistoryFileLines
+- ConsoleHistoryTimeStamp
+- save_crashes
+- crash_dir
+- PIDFile
+- startup_console_commands_file
+- shutdown_console_commands_file
+- repeating_console_commands_file
+- timer_Script
+- timer_Interval
+- async_call_method
+- MaxPoolThreads
+- JobEngineEnabled
+- RegistryLocation
+- ConfigDirectory
+- clientstack_plugin
+- region_info_source
+- regionload_regionsdir
+- regionload_webserver_url
+- allow_regionless
+- see_into_region
+- LegacySitOffsets
+- MaxPrimUndos
+- NonPhysicalPrimMin
+- NonPhysicalPrimMax
+- PhysicalPrimMin
+- PhysicalPrimMax
+- ClampPrimSize
+- LinksetPrims
+- AllowScriptCrossing
+- TrustBinaries
+- DefaultDrawDistance
+- MaxDrawDistance
+- MaxRegionsViewDistance
+- MinRegionsViewDistance
+- InworldRestartShutsDown
+- Normalized55FPS
+- FrameTime
+- FrameTimeWarnPercent
+- FrameTimeCritPercent
+- UpdateObjectsEveryNFrames
+- UpdateAgentsEveryNFrames
+- UpdateEntityMovementEveryNFrames
+- UpdateCoarseLocationsEveryNFrames
+- UpdatePhysicsEveryNFrames
+- UpdateEventsEveryNFrames
+- UpdateTerrainEveryNFrames
+- UpdateStorageEveryNFrames
+- UpdateTempCleaningEveryNSeconds
+- MinimumTimeBeforePersistenceConsidered
+- MaximumTimeBeforePersistenceConsidered
+- collidable_prim
+- physical_prim
+- meshing
+- physics
+- DefaultScriptEngine
+- emailmodule
+[YEngine]
+- Enabled
+- ScriptStackSize
+- ScriptHeapSize
+- NumThreadScriptWorkers
+- Priority
+- UseSourceHashCode
+- MaintenanceInterval
+- AsyncLLCommandLoopms
+- ScriptDelayFactor
+- ScriptDistanceLimitFactor
+- NotecardLineReadCharsMax
+- MinTimerInterval
+- SensorMaxRange
+- SensorMaxResults
+- AutomaticLinkPermission
+- DisableUndergroundMovement
+- ScriptEnginesPath
+[SMTP]
+- enabled
+- enableflyslow
+- Stats_URI
+- StartDisabled
+- UseCSJ2K
+- UseTrashOnDelete
+- LogOverloads
+- SpawnPointRouting
+- EnableCertConverter
+- PemCertPublicKey
+- PemCertPrivateKey
+- outputCertName
+- outputCertPassword
+- EnableSelfsignedCertSupport
+- CertRenewOnStartup
+- CertFileName
+- CertPassword
+- CertHostName
+- CertHostIp
+[Map]
+- GenerateMaptiles
+- WorldMapModule
+- MapImageModule
+- BlacklistTimeout
+- MaptileRefresh
+- DrawPrimOnMapTile
+- TextureOnMapTile
+- TexturePrims
+- TexturePrimSize
+- RenderMeshes
+- RenderMaxHeight
+- RenderMinHeight
+- ShowNPCs
+[Permissions]
+- permissionmodules
+- serverside_object_permissions
+- allow_grid_gods
+- region_owner_is_god
+- region_manager_is_god
+- automatic_gods
+- implicit_gods
+- allowed_script_creators
+- allowed_script_editors
+- simple_build_permissions
+- LevelUpload
+[RegionReady]
+- enabled
+- channel_notify
+- login_disable
+[EstateManagement]
+- AllowRegionRestartFromClient
+- IgnoreEstateMinorAccessControl
+- IgnoreEstatePaymentAccessControl
+[UserProfiles]
+- AllowUserProfileWebURLs
+[Network]
+- OutboundDisallowForUserScripts
+- shard
+- ExternalHostNameForLSL
+[ScriptsHttpRequestModule]
+- (no keys found)
+[AccessControl]
+- (no keys found)
+[ClientStack.LindenUDP]
+- (no keys found)
+[ClientStack.LindenCaps]
+- Cap_AttachmentResources
+- Cap_AvatarPickerSearch
+- Cap_GetDisplayNames
+- Cap_SetDisplayName
+- Cap_ChatSessionRequest
+- Cap_EventQueueGet
+- Cap_DispatchRegionInfo
+- Cap_FetchInventory
+- Cap_WebFetchInventoryDescendents
+- Cap_FetchInventoryDescendents2
+- Cap_FetchInventory2
+- Cap_FetchLib
+- Cap_FetchLibDescendents
+- Cap_FetchLib2
+- Cap_FetchLibDescendents2
+- Cap_GetAsset
+- Cap_GetTexture
+- Cap_GetMesh
+- Cap_GetMesh2
+- Cap_NewFileAgentInventory
+- Cap_NewFileAgentInventoryVariablePrice
+- Cap_UploadBakedTexture
+- Cap_UploadObjectAsset
+- Cap_ObjectAdd
+- Cap_UpdateScriptAgent
+- Cap_UpdateScriptTask
+- Cap_UpdateNotecardAgentInventory
+- Cap_UpdateNotecardTaskInventory
+- Cap_UpdateGestureAgentInventory
+- Cap_UpdateGestureTaskInventory
+- Cap_EnvironmentSettings
+- Cap_MapLayer
+- Cap_MapLayerGod
+- Cap_LandResources
+- Cap_ParcelPropertiesUpdate
+- Cap_RemoteParcelRequest
+- Cap_EstateAccess
+- Cap_EstateChangeInfo
+- Cap_GroupMemberData
+- Cap_GroupProposalBallot
+- Cap_StartGroupProposal
+- Cap_ObjectMedia
+- Cap_ObjectMediaNavigate
+- Cap_ParcelNavigateMedia
+- Cap_ParcelMediaURLFilterList
+- Cap_ParcelVoiceInfoRequest
+- Cap_ProvisionVoiceAccountRequest
+- Cap_CopyInventoryFromNotecard
+- Cap_HomeLocation
+- Cap_ServerReleaseNotes
+- Cap_GetObjectCost
+- Cap_GetObjectPhysicsData
+- Cap_ProductInfoRequest
+- Cap_SearchStatRequest
+- Cap_SearchStatTracking
+- Cap_SendPostcard
+- Cap_SendUserReport
+- Cap_SendUserReportWithScreenshot
+- Cap_SimConsole
+- Cap_SimulatorFeatures
+- Cap_UntrustedSimulatorMessage
+- Cap_UpdateAgentInformation
+- Cap_UpdateAgentLanguage
+- Cap_TextureStats
+- Cap_ViewerStartAuction
+- Cap_ViewerStats
+[Chat]
+- enabled
+- whisper_distance
+- say_distance
+- shout_distance
+[EntityTransfer]
+- AllowAvatarCrossing
+- DisableObjectTransfer
+- LevelHGTeleport
+- DisableInterRegionTeleportCancellation
+- LandingPointBehavior
+[Messaging]
+- InstantMessageModule
+- MessageTransferModule
+- OfflineMessageModule
+- OfflineMessageURL
+- MuteListModule
+- MuteListURL
+- ForwardOfflineGroupMessages
+[Inventory]
+- CoalesceMultipleObjectsToInventory
+[Appearance]
+- PersistBakedTextures
+- DelayBeforeAppearanceSave
+- DelayBeforeAppearanceSend
+- ResendAppearanceUpdates
+- ReuseTextures
+[Attachments]
+- Enabled
+- WearReplacesAll
+[Mesh]
+- AllowMeshUpload
+- LevelUpload
+- UseMeshiesPhysicsMesh
+- ConvexPrims
+- ConvexSculpts
+- MeshFileCache
+- MeshFileCachePath
+- MeshFileCacheDoExpire
+- MeshFileCacheExpireHours
+[Textures]
+- ReuseDynamicTextures
+- ReuseDynamicLowDataTextures
+[ODEPhysicsSettings]
+- collect_stats
+- physics_logging
+- physics_logging_interval
+- physics_logging_append_existing_logfile
+- world_gravityx
+- world_gravityy
+- world_gravityz
+- avatar_terminal_velocity
+- world_stepsize
+- world_solver_iterations
+- filter_collisions
+- nm_terraincontact_friction
+- nm_terraincontact_bounce
+- nm_terraincontact_erp
+- m_terraincontact_friction
+- m_terraincontact_bounce
+- m_terrainContact_erp
+- m_avatarobjectcontact_friction
+- m_avatarobjectcontact_bounce
+- objectcontact_friction
+- objectcontact_bounce
+- av_density
+- av_movement_divisor_walk
+- av_movement_divisor_run
+- geometry_default_density
+- body_frames_auto_disable
+- geom_updates_before_throttled_update
+- maximum_mass_object
+- mesh_sculpted_prim
+- mesh_lod
+- mesh_physical_lod
+- MinSizeToMeshmerize
+[BulletSim]
+- BulletEngine
+- UseSeparatePhysicsThread
+- TerrainImplementation
+- TerrainMeshMagnification
+- AvatarToAvatarCollisionsByDefault
+- AvatarHeightLowFudge
+- AvatarHeightMidFudge
+- AvatarHeightHighFudge
+- AvatarStepHeight
+- AvatarStepAngle
+- AvatarStepApproachFactor
+- AvatarStepGroundFudge
+- AvatarStepForceFactor
+- AvatarStepUpCorrectionFactor
+- AvatarStepSmoothingSteps
+- AvatarTerminalVelocity
+- LinkImplementation
+- LinksetOffsetCenterOfMass
+- MeshSculptedPrim
+- ForceSimplePrimMeshing
+- ShouldRemoveZeroWidthTriangles
+- ShouldUseAssetHulls
+- MaxCollisionsPerFrame
+- MaxUpdatesPerFrame
+- PhysicsLoggingEnabled
+- PhysicsLoggingDir
+- VehicleLoggingEnabled
+[RemoteAdmin]
+- enabled
+- port
+- bind_ip_address
+- access_password
+- access_ip_addresses
+- create_region_enable_voice
+- create_region_public
+- region_file_template
+- region_limit
+- enabled_methods
+- default_male
+- default_female
+- copy_folders
+- default_appearance
+[RestPlugins]
+- enabled
+- god_key
+- prefix
+- authenticate
+- secured
+[IRC]
+- enabled
+[Wind]
+- enabled
+- wind_update_rate
+- wind_plugin
+- avg_strength
+- avg_direction
+- var_strength
+- var_direction
+- rate_change
+- strength
+[Trees]
+- enabled
+- active_trees
+- update_rate
+- allowGrow
+[VectorRender]
+- font_name
+[LL-Functions]
+- AllowosConsoleCommand
+- AllowGodFunctions
+- RestrictEmail
+- max_listens_per_region
+- max_listens_per_script
+- max_external_urls_per_simulator
+- UseSimpleBoxesInGetBoundingBox
+- AddStatsInGetBoundingBox
+- LowerAvatarBoundingBoxStandingXconst
+- UpperAvatarBoundingBoxStandingXconst
+- LowerAvatarBoundingBoxStandingYconst
+- UpperAvatarBoundingBoxStandingYconst
+- LowerAvatarBoundingBoxStandingZconst
+- LowerAvatarBoundingBoxStandingZcoeff
+- UpperAvatarBoundingBoxStandingZconst
+- UpperAvatarBoundingBoxStandingZcoeff
+- LowerAvatarBoundingBoxGroundsittingXconst
+- UpperAvatarBoundingBoxGroundsittingXconst
+- LowerAvatarBoundingBoxGroundsittingYconst
+- UpperAvatarBoundingBoxGroundsittingYconst
+- LowerAvatarBoundingBoxGroundsittingZconst
+- LowerAvatarBoundingBoxGroundsittingZcoeff
+- UpperAvatarBoundingBoxGroundsittingZconst
+- UpperAvatarBoundingBoxGroundsittingZcoeff
+- LowerAvatarBoundingBoxSittingXconst
+- UpperAvatarBoundingBoxSittingXconst
+- LowerAvatarBoundingBoxSittingYconst
+- UpperAvatarBoundingBoxSittingYconst
+- LowerAvatarBoundingBoxSittingZconst
+- LowerAvatarBoundingBoxSittingZcoeff
+- UpperAvatarBoundingBoxSittingZconst
+- UpperAvatarBoundingBoxSittingZcoeff
+- PrimBoundingBoxSafetyCoefficientX
+- PrimBoundingBoxSafetyCoefficientY
+- PrimBoundingBoxSafetyCoefficientZ
+- UseLlCastRayV3
+- FloatToleranceInLlCastRay
+- FloatTolerance2InLlCastRay
+- PrimDetailLevelInLlCastRay
+- SculptDetailLevelInLlCastRay
+- MeshDetailLevelInLlCastRay
+- AvatarDetailLevelInLlCastRay
+- MaxHitsInLlCastRay
+- MaxHitsPerPrimInLlCastRay
+- MaxHitsPerObjectInLlCastRay
+- DetectExitHitsInLlCastRay
+- DoAttachmentsInLlCastRay
+- ThrottleTimeInMsInLlCastRay
+- AvailableTimeInMsPerRegionInLlCastRay
+- AvailableTimeInMsPerAvatarInLlCastRay
+- RequiredAvailableTimeInMsInLlCastRay
+- MaximumAvailableTimeInMsInLlCastRay
+- UseMeshCacheInLlCastRay
+[DataSnapshot]
+- index_sims
+- data_exposure
+- gridname
+- default_snapshot_period
+- snapshot_cache_directory
+- DATA_SRV_CustomSearch
+[Economy]
+- economymodule
+- SellEnabled
+- PriceUpload
+- PriceGroupCreate
+- ObjectCount
+- PriceEnergyUnit
+- PriceObjectClaim
+- PricePublicObjectDecay
+- PricePublicObjectDelete
+- PriceParcelClaim
+- PriceParcelClaimFactor
+- PriceRentLight
+- TeleportMinPrice
+- TeleportPriceExponent
+- EnergyEfficiency
+- PriceObjectRent
+- PriceObjectScaleFactor
+- PriceParcelRent
+- MeshModelAllowTextureToInventory
+[Concierge]
+- enabled
+- whoami
+- password
+- regions
+- welcomes
+- broker
+[Hypergrid]
+- safemode
+[FreeSwitchVoice]
+- Enabled
+- LocalServiceModule
+- FreeswitchServiceURL
+[VivoxVoice]
+- enabled
+- vivox_server
+- vivox_sip_uri
+- vivox_admin_user
+- vivox_admin_password
+- vivox_channel_type
+- vivox_channel_distance_model
+- vivox_channel_mode
+- vivox_channel_roll_off
+- vivox_channel_max_range
+- vivox_channel_clamping_distance
+[Groups]
+- Enabled
+- Module
+- NoticesEnabled
+- DebugEnabled
+- DebugMessagingEnabled
+- GroupsCacheTimeout
+- MessagingModule
+- MessagingEnabled
+- MessageOnlineUsersOnly
+- ServicesConnectorModule
+- GroupsServerURI
+- XmlRpcServiceReadKey
+- XmlRpcServiceWriteKey
+- XmlRpcDisableKeepAlive
+- LevelGroupCreate
+[PacketPool]
+- RecyclePackets
+- RecycleDataBlocks
+- RecycleBaseUDPPackets
+[InterestManagement]
+- UpdatePrioritizationScheme
+- ReprioritizationEnabled
+- ReprioritizationInterval
+- RootReprioritizationDistance
+- ChildReprioritizationDistance
+- ObjectsCullingByDistance
+- RootTerseUpdatePeriod
+- ChildTerseUpdatePeriod
+- RootPositionUpdateTolerance
+- RootRotationUpdateTolerance
+- RootVelocityUpdateTolerance
+[Monitoring]
+- Enabled
+- ServerStatsEnabled
+[WebStats]
+- enabled
+[Statistics]
+- NumberOfFrames
+[MediaOnAPrim]
+- Enabled
+[NPC]
+- Enabled
+- MaxNumberNPCsPerScene
+- AllowNotOwned
+- AllowSenseAsAvatar
+- AllowCloneOtherAvatars
+- NoNPCGroup
+[Terrain]
+- InitialTerrain
+- SendTerrainUpdatesByViewDistance
+[LandManagement]
+- LimitParcelLayerUpdateDistance
+- ParcelLayerViewDistance
+- ShowParcelBansLines
+- BanLineSafeHeight
+- DefaultAdministratorParcelName
+- DefaultAdministratorGroupUUID
+- DefaultAdministratorOwnerUUID
+[JsonStore]
+- Enabled
+- EnableObjectStore
+- MaxStringSpace
+[AssetService]
+- DefaultAssetLoader
+- AssetLoaderArgs
+- AssetLoaderEnabled
+[GridService]
+- StorageProvider
+[AutoBackupModule]
+- AutoBackupModuleEnabled
+[Sounds]
+- Module
+- MaxDistance
+[ServiceThrottle]
+- Interval
+[Dwell]
+- DwellModule
+[ServerReleaseNotes]
+- ServerReleaseNotesURL
+[Modules]
+- Include-modules
+[OSSL]
+- Include-osslDefaultEnable
+[Architecture]
+- Include-Architecture
+
