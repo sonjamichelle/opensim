@@ -3023,16 +3023,37 @@
 	;;
 	;; AVAILABLE OPTIONS:
 	;;
+	;; IMPORTANT:
+	;; Mesher choice does NOT determine overall physics quality by itself.
+	;; Physics behavior is the result of mesher choice, physics engine,
+	;; build quality, region scale, configuration, and simulator health.
+	;;
+	;; See docs/PHYSICS_MESHING_REALITY.md for a detailed explanation,
+	;; decision matrix, and tuning checklist.
+	;;
 	;; ubODEMeshmerizer
-	;;   - Required for ubODE physics
-	;;   - Best accuracy
-	;;   - Supports mesh, sculpt, tortured prims
-	;;   - Higher CPU cost
+	;;   - Compatible with ubODE physics
+	;;   - Provides more accurate collision meshes for complex geometry
+	;;   - Better suited for mesh-heavy or precision collision use cases
+	;;   - Higher CPU and memory cost
+	;;   - NOT universally required
 	;;
 	;; Meshmerizer
-	;;   - Legacy mesher
-	;;   - Lower accuracy
-	;;   - Not compatible with ubODE
+	;;   - Compatible with ubODE physics
+	;;   - Simpler collision meshes with lower overhead
+	;;   - Often preferable for large regions, prim-based builds,
+	;;     high-concurrency regions, or performance-sensitive deployments
+	;;   - Predictable and stable when content is well-designed
+	;;
+	;; Mesher selection should be based on region purpose and operational
+	;; constraints, not blanket recommendations.
+	;;
+	;; Real-world production validation of mixed mesher usage with ubODE
+	;; is documented in:
+	;;   docs/Physics_Meshing_in_OpenSim.md
+	;;
+	;; See (Observed in Production) section
+	;; See (Evidence Scope and Validation Boundaries) for how claims in this document are validated.
 	;;
 	;; ZeroMesher
 	;;   - Extremely simplified shapes
